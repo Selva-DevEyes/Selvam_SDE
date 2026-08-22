@@ -2,113 +2,131 @@
 
 import React from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
-import { GraduationCap, MapPin, Award, Terminal, Cpu, Zap, Code, ShieldCheck } from 'lucide-react';
+import { Terminal, Cpu, Layout, Code2, ShieldCheck, Zap, Award, GraduationCap } from 'lucide-react';
 
-export const AboutSection: React.FC = () => {
-  const highlights = [
+interface AboutSectionProps {
+  currentRole: 'python-ai' | 'wordpress-fullstack';
+}
+
+export const AboutSection: React.FC<AboutSectionProps> = ({ currentRole }) => {
+  const activeRoleData = PORTFOLIO_DATA.roles[currentRole];
+
+  const services = [
     {
-      icon: <GraduationCap className="w-5 h-5 text-emerald-400" />,
-      title: "Education",
-      detail: "B.E. Electrical & Electronics Engineering — PSN Institute (2010 – 2014)"
+      icon: <Code2 className="w-6 h-6 text-[#78cc6d]" />,
+      title: "Python & FastAPI Backend",
+      desc: "Architecting high-performance asynchronous REST APIs with Pydantic schema validation, SQLAlchemy ORM, and database optimization (PostgreSQL/SQLite)."
     },
     {
-      icon: <Cpu className="w-5 h-5 text-cyan-400" />,
-      title: "Applied AI & GenAI",
-      detail: "Masai & IIT Patna SDE Program (FastAPI, SQLAlchemy, LLM Apps)"
+      icon: <Cpu className="w-6 h-6 text-[#38bdf8]" />,
+      title: "Gen AI & Applied LLMs",
+      desc: "Building LLM-integrated microservices, prompt engineering pipelines, and smart automation tools co-developed through Masai & IIT Patna."
     },
     {
-      icon: <Award className="w-5 h-5 text-amber-400" />,
-      title: "Full Stack JS Certification",
-      detail: "IBM Certified Full Stack JavaScript Developer (2025)"
+      icon: <Layout className="w-6 h-6 text-[#78cc6d]" />,
+      title: "WordPress & WooCommerce",
+      desc: "6+ years engineering 410+ production websites for GoDaddy international client portfolio. Rebuilding checkout workflows, ACF dynamic templates, and custom theme logic."
     },
     {
-      icon: <MapPin className="w-5 h-5 text-purple-400" />,
-      title: "Location",
-      detail: "Tirunelveli, Tamil Nadu, 627357, India (Open to Remote / Global)"
+      icon: <Zap className="w-6 h-6 text-[#38bdf8]" />,
+      title: "PageSpeed & Core Web Vitals",
+      desc: "Optimizing server-side caching, lazy loading, image compression, and CDN setup to boost Google PageSpeed scores from ~70 to 95+."
     }
   ];
 
   return (
-    <section id="about" className="py-24 relative bg-[#060911]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="space-y-12 animate-in fade-in duration-300">
+      
+      {/* Title */}
+      <div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight title-line">
+          About <span className="text-[#78cc6d]">Me</span>
+        </h2>
         
-        {/* Section Heading */}
-        <div className="flex flex-col items-start mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
-            <Terminal className="w-3.5 h-3.5" />
-            <span>01. ABOUT ME</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Engineering Precision. <span className="gradient-text-emerald">High Throughput.</span>
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-2">
-            A background in Electrical Engineering combined with 6+ years of production web delivery.
+        {/* Active Role Tagline */}
+        <div className="p-4 rounded-2xl bg-[#12171b] border border-[#282c30] flex items-center gap-3 text-xs sm:text-sm font-mono text-[#78cc6d] mb-6">
+          <Terminal className="w-5 h-5 shrink-0" />
+          <span>{activeRoleData.tagline}</span>
+        </div>
+
+        {/* Narrative Paragraph */}
+        <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p>
+            I'm <strong className="text-white">SELVAM S</strong>, a software and web engineer with <strong className="text-[#78cc6d]">6+ years of experience</strong> delivering production-ready applications. Formerly a lead WordPress Integrator at <strong className="text-white">vSplash Techlab</strong> (GoDaddy projects), I engineered over <strong className="text-[#78cc6d]">410+ production websites</strong> for international accounts across US, UK, AU, and CA.
+          </p>
+          <p>
+            Currently, I am expanding into backend AI systems through an intensive <strong className="text-[#38bdf8]">Software Development Engineering with Applied AI</strong> program with <strong className="text-white">Masai & IIT Patna</strong>, specializing in Python 3, FastAPI, Pydantic, SQLAlchemy, and GenAI LLM integrations.
           </p>
         </div>
+      </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Main Story Narrative */}
-          <div className="lg:col-span-7 space-y-6 text-slate-300 text-base leading-relaxed">
-            <p className="text-lg text-slate-200">
-              I'm <strong className="text-emerald-400">Selvam S</strong>, a backend-focused developer and full-stack engineer based in Tirunelveli, Tamil Nadu. Over the past <strong className="text-white">6+ years</strong>, I have specialized in shipping production-ready web applications, custom themes, and REST API services for international client portfolios.
-            </p>
+      {/* Services Section ("What I Do") */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 title-line">
+          My <span className="text-[#78cc6d]">Services</span>
+        </h3>
 
-            <div className="p-5 rounded-2xl glass-card border border-emerald-500/20 bg-emerald-950/10 space-y-3">
-              <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
-                <ShieldCheck className="w-5 h-5" />
-                <span>Enterprise Proven Track Record at GoDaddy (vSplash)</span>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {services.map((service, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-2xl ryancv-box space-y-3"
+            >
+              <div className="w-12 h-12 rounded-xl bg-[#12171b] border border-[#282c30] flex items-center justify-center">
+                {service.icon}
               </div>
-              <p className="text-xs sm:text-sm text-slate-300">
-                During my 20-month engagement as WordPress Integrator 2 at vSplash Techlab, I engineered over <strong className="text-white">410+ production websites</strong> for GoDaddy's international client accounts across the US, UK, Australia, and Canada. Sustaining 8–10 pixel-perfect pages daily while improving average Google PageSpeed scores from ~70 to 95+.
+              <h4 className="text-base font-bold text-white">
+                {service.title}
+              </h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                {service.desc}
               </p>
             </div>
+          ))}
+        </div>
+      </div>
 
-            <p>
-              Currently, I am expanding my backend capabilities through an intensive <strong className="text-cyan-400">Software Development Engineering with Applied AI</strong> program co-offered by <strong className="text-white">Masai & IIT Patna</strong>. My technical focus centres on building scalable REST microservices using <strong className="text-emerald-400">Python, FastAPI, Pydantic, and SQLAlchemy</strong> paired with relational database architectures (PostgreSQL & SQLite) and generative AI model integrations.
-            </p>
+      {/* Fun Facts / Counter Metrics Ticker */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 title-line">
+          Engineering <span className="text-[#78cc6d]">Milestones</span>
+        </h3>
 
-            <p>
-              My engineering background gives me a systems-first mindset — whether writing custom PHP hooks, building FastAPI REST endpoints, or optimizing SQL queries, I build systems that are fast, maintainable, and defect-free.
-            </p>
-          </div>
-
-          {/* Highlights Sidebar Grid */}
-          <div className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
-            {highlights.map((item, index) => (
-              <div
-                key={index}
-                className="p-5 rounded-2xl glass-card glass-card-hover border border-slate-800 flex items-start gap-4"
-              >
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                    {item.detail}
-                  </p>
-                </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {PORTFOLIO_DATA.stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl bg-[#12171b] border border-[#282c30] text-center space-y-1 hover:border-[#78cc6d]/40 transition-colors"
+            >
+              <div className="text-3xl font-extrabold font-mono text-[#78cc6d]">
+                {stat.value}
               </div>
-            ))}
-
-            {/* Quick Metrics Callout */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/30 text-center">
-              <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">
-                Current Learning Stack
+              <div className="text-xs font-semibold text-white">
+                {stat.label}
               </div>
-              <div className="text-sm font-bold text-white mt-1">
-                Python 3 • FastAPI • Pydantic • SQLAlchemy • PostgreSQL • LLM Apps
+              <div className="text-[10px] text-slate-400 line-clamp-1">
+                {stat.description}
               </div>
             </div>
-
-          </div>
-
+          ))}
         </div>
-
       </div>
-    </section>
+
+      {/* Credentials Quick Banner */}
+      <div className="p-5 rounded-2xl bg-[#12171b] border border-[#282c30] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <GraduationCap className="w-8 h-8 text-[#78cc6d] shrink-0" />
+          <div>
+            <div className="text-xs font-mono text-slate-400">QUALIFICATION</div>
+            <div className="text-sm font-bold text-white">B.E. Electrical & Electronics — PSN Institute</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-xs font-mono text-[#38bdf8] bg-[#38bdf8]/10 px-3 py-1.5 rounded-xl border border-[#38bdf8]/20">
+          <Award className="w-4 h-4" />
+          <span>IBM Certified Full-Stack JS</span>
+        </div>
+      </div>
+
+    </div>
   );
 };

@@ -1,123 +1,148 @@
 'use client';
 
-import React, { useState } from 'react';
-import { PORTFOLIO_DATA, Experience } from '@/data/portfolioData';
-import { Briefcase, Calendar, MapPin, CheckCircle2, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { PORTFOLIO_DATA } from '@/data/portfolioData';
+import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, ChevronRight, Award } from 'lucide-react';
 
-export const ExperienceSection: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'python-ai' | 'wordpress' | 'fullstack'>('all');
+interface ExperienceSectionProps {
+  currentRole: 'python-ai' | 'wordpress-fullstack';
+}
 
-  const experiences = filter === 'all'
-    ? PORTFOLIO_DATA.experiences
-    : PORTFOLIO_DATA.experiences.filter(exp => exp.category === filter || exp.category === 'general');
-
+export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ currentRole }) => {
   return (
-    <section id="experience" className="py-24 bg-[#060911] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="space-y-12 animate-in fade-in duration-300">
+      
+      {/* Title */}
+      <div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight title-line">
+          Resume & <span className="text-[#78cc6d]">History</span>
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-400">
+          Career progression across enterprise WordPress engineering, full-stack development, and Python AI backend systems.
+        </p>
+      </div>
+
+      {/* Two Column Layout (Experience vs Education) */}
+      <div className="grid lg:grid-cols-2 gap-8">
         
-        {/* Section Heading */}
-        <div className="flex flex-col items-start mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>03. PROFESSIONAL EXPERIENCE</span>
+        {/* Left Column: Experience */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-2 pb-2 border-b border-[#282c30]">
+            <Briefcase className="w-5 h-5 text-[#78cc6d]" />
+            <h3 className="text-lg font-bold text-white uppercase tracking-wider">
+              Experience
+            </h3>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Career Timeline & <span className="gradient-text-emerald">Track Record</span>
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-2">
-            From engineering 410+ production websites for GoDaddy's international client accounts to building Python AI REST microservices.
-          </p>
-        </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          <button
-            onClick={() => setFilter('all')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-              filter === 'all'
-                ? 'bg-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20'
-                : 'glass-card text-slate-400 hover:text-white'
-            }`}
-          >
-            All Experiences ({PORTFOLIO_DATA.experiences.length})
-          </button>
-          <button
-            onClick={() => setFilter('python-ai')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-              filter === 'python-ai'
-                ? 'bg-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20'
-                : 'glass-card text-slate-400 hover:text-white'
-            }`}
-          >
-            Python & AI Focus
-          </button>
-          <button
-            onClick={() => setFilter('wordpress')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-              filter === 'wordpress'
-                ? 'bg-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20'
-                : 'glass-card text-slate-400 hover:text-white'
-            }`}
-          >
-            WordPress Focus
-          </button>
-        </div>
-
-        {/* Timeline Stream */}
-        <div className="relative border-l-2 border-slate-800 ml-4 sm:ml-8 space-y-12 pl-6 sm:pl-10">
-          {experiences.map((exp: Experience, idx: number) => (
-            <div key={exp.id} className="relative group">
-              
-              {/* Timeline Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-[#080c14] border-2 border-emerald-400 group-hover:bg-emerald-400 transition-colors flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 group-hover:bg-[#080c14]" />
-              </div>
-
-              {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl glass-card border border-slate-800 hover:border-emerald-500/30 transition-all duration-300 space-y-4">
+          <div className="space-y-6 relative border-l border-[#282c30] pl-6 ml-3">
+            {PORTFOLIO_DATA.experiences.map((exp) => (
+              <div key={exp.id} className="relative space-y-2 group">
                 
-                {/* Role Header */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-4 border-b border-slate-800">
-                  <div>
-                    <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider">
-                      {exp.company}
-                    </span>
-                    <h3 className="text-xl font-bold text-white mt-0.5">
-                      {exp.role}
-                    </h3>
-                  </div>
+                {/* Green Timeline Dot */}
+                <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[#78cc6d] shadow-sm shadow-[#78cc6d]/50 group-hover:scale-125 transition-transform" />
 
-                  <div className="flex items-center gap-4 text-xs text-slate-400 font-mono">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-slate-500" />
-                      <span>{exp.period}</span>
-                    </div>
-                    {exp.location && (
-                      <div className="hidden sm:flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-slate-500" />
-                        <span>{exp.location}</span>
-                      </div>
-                    )}
+                {/* Date Badge */}
+                <span className="inline-block text-[11px] font-mono font-bold text-[#78cc6d] bg-[#78cc6d]/10 px-2.5 py-1 rounded-md border border-[#78cc6d]/20">
+                  {exp.period}
+                </span>
+
+                {/* Role & Company */}
+                <div>
+                  <h4 className="text-base font-bold text-white group-hover:text-[#78cc6d] transition-colors">
+                    {exp.role}
+                  </h4>
+                  <div className="text-xs font-mono text-slate-400">
+                    {exp.company} {exp.location && `• ${exp.location}`}
                   </div>
                 </div>
 
-                {/* Highlights List */}
-                <div className="space-y-3 pt-2">
-                  {exp.highlights.map((item, hIdx) => (
-                    <div key={hIdx} className="flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
-                      <ChevronRight className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
+                {/* Bullet Highlights */}
+                <ul className="space-y-1.5 pt-1 text-xs text-slate-300">
+                  {exp.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-2 leading-relaxed">
+                      <ChevronRight className="w-3.5 h-3.5 text-[#78cc6d] shrink-0 mt-0.5" />
+                      <span>{h}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
               </div>
+            ))}
+          </div>
+        </div>
 
+        {/* Right Column: Education & Certifications */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-2 pb-2 border-b border-[#282c30]">
+            <GraduationCap className="w-5 h-5 text-[#38bdf8]" />
+            <h3 className="text-lg font-bold text-white uppercase tracking-wider">
+              Education & Certifications
+            </h3>
+          </div>
+
+          <div className="space-y-6 relative border-l border-[#282c30] pl-6 ml-3">
+            
+            {/* Masai & IIT Patna */}
+            <div className="relative space-y-2 group">
+              <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[#38bdf8] shadow-sm shadow-[#38bdf8]/50 group-hover:scale-125 transition-transform" />
+              <span className="inline-block text-[11px] font-mono font-bold text-[#38bdf8] bg-[#38bdf8]/10 px-2.5 py-1 rounded-md border border-[#38bdf8]/20">
+                Feb 2026 – Ongoing
+              </span>
+              <div>
+                <h4 className="text-base font-bold text-white group-hover:text-[#38bdf8] transition-colors">
+                  Software Development Engineering with Applied AI
+                </h4>
+                <div className="text-xs font-mono text-slate-400">
+                  Masai & IIT Patna Co-Program
+                </div>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Intensive hands-on curriculum covering Python 3, FastAPI, Pydantic schema design, SQLAlchemy ORM, relational database architectures, and GenAI model integration.
+              </p>
             </div>
-          ))}
+
+            {/* IBM Certification */}
+            <div className="relative space-y-2 group">
+              <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[#38bdf8] shadow-sm shadow-[#38bdf8]/50 group-hover:scale-125 transition-transform" />
+              <span className="inline-block text-[11px] font-mono font-bold text-[#38bdf8] bg-[#38bdf8]/10 px-2.5 py-1 rounded-md border border-[#38bdf8]/20">
+                Oct 2025 – Nov 2025
+              </span>
+              <div>
+                <h4 className="text-base font-bold text-white group-hover:text-[#38bdf8] transition-colors">
+                  Full Stack JavaScript Developer Certification
+                </h4>
+                <div className="text-xs font-mono text-slate-400">
+                  IBM Official Credential
+                </div>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Verified full-stack expertise spanning React, JavaScript (ES6+), Node.js, Web APIs, and asynchronous programming principles.
+              </p>
+            </div>
+
+            {/* Degree */}
+            {PORTFOLIO_DATA.education.map((edu, idx) => (
+              <div key={idx} className="relative space-y-2 group">
+                <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-[#78cc6d] shadow-sm shadow-[#78cc6d]/50 group-hover:scale-125 transition-transform" />
+                <span className="inline-block text-[11px] font-mono font-bold text-[#78cc6d] bg-[#78cc6d]/10 px-2.5 py-1 rounded-md border border-[#78cc6d]/20">
+                  {edu.period}
+                </span>
+                <div>
+                  <h4 className="text-base font-bold text-white group-hover:text-[#78cc6d] transition-colors">
+                    {edu.degree}
+                  </h4>
+                  <div className="text-xs font-mono text-slate-400">
+                    {edu.institution} • {edu.location}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </div>
         </div>
 
       </div>
-    </section>
+
+    </div>
   );
 };
