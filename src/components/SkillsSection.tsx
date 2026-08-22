@@ -39,10 +39,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ currentRole }) => 
       
       {/* Title */}
       <div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight title-line">
-          Skill <span className="text-[#78cc6d]">Proficiency</span>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] tracking-tight title-line">
+          Skill <span className="text-[var(--accent-green)]">Proficiency</span>
         </h2>
-        <p className="text-xs sm:text-sm text-slate-400">
+        <p className="text-xs sm:text-sm text-[var(--text-muted)]">
           Technical competencies spanning backend API engineering, GenAI pipelines, WordPress ecosystem, and modern front-end web tools.
         </p>
       </div>
@@ -55,8 +55,8 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ currentRole }) => 
             onClick={() => setActiveCategory(cat.id as any)}
             className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
               activeCategory === cat.id
-                ? 'bg-[#78cc6d] text-slate-950 font-bold shadow-md shadow-[#78cc6d]/20'
-                : 'bg-[#12171b] border border-[#282c30] text-slate-400 hover:text-white hover:border-[#78cc6d]/30'
+                ? 'bg-[var(--accent-green)] text-slate-950 font-bold shadow-md'
+                : 'bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-main)] hover:border-[var(--accent-green)]/30'
             }`}
           >
             {cat.icon}
@@ -72,23 +72,23 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ currentRole }) => 
             key={group.id}
             className="p-6 rounded-2xl ryancv-box space-y-4"
           >
-            <h3 className="text-sm font-mono font-bold text-[#78cc6d] uppercase tracking-wider pb-2 border-b border-[#282c30] flex items-center justify-between">
+            <h3 className="text-sm font-mono font-bold text-[var(--accent-green)] uppercase tracking-wider pb-2 border-b border-[var(--border-color)] flex items-center justify-between">
               <span>{group.title}</span>
-              <span className="text-[10px] text-slate-400">{group.skills.length} Items</span>
+              <span className="text-[10px] text-[var(--text-muted)]">{group.skills.length} Items</span>
             </h3>
 
             <div className="space-y-3.5">
               {group.skills.map((skill, idx) => (
                 <div key={idx} className="space-y-1.5">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="font-bold text-white">{skill.name}</span>
-                    <span className="font-mono text-[11px] text-[#78cc6d] font-semibold">
+                    <span className="font-bold text-[var(--text-main)]">{skill.name}</span>
+                    <span className="font-mono text-[11px] text-[var(--accent-green)] font-semibold">
                       {skill.level}%
                     </span>
                   </div>
 
-                  {/* RyanCV Green Progress Bar */}
-                  <div className="w-full h-2 bg-[#12171b] rounded-full overflow-hidden border border-[#282c30]">
+                  {/* RyanCV Progress Bar */}
+                  <div className="w-full h-2 bg-[var(--bg-body)] rounded-full overflow-hidden border border-[var(--border-color)]">
                     <div
                       className="h-full progress-bar-fill rounded-full transition-all duration-1000"
                       style={{ width: `${skill.level}%` }}

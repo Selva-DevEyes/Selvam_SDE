@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { PORTFOLIO_DATA, Project } from '@/data/portfolioData';
 import { GithubIcon } from '@/components/Icons';
-import { FolderGit2, Sparkles, ArrowUpRight, ExternalLink, Code2, Terminal } from 'lucide-react';
+import { FolderGit2, Sparkles, ArrowUpRight } from 'lucide-react';
 
 interface ProjectsSectionProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
@@ -21,10 +21,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
       
       {/* Title */}
       <div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight title-line">
-          Featured <span className="text-[#78cc6d]">Works</span>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] tracking-tight title-line">
+          Featured <span className="text-[var(--accent-green)]">Works</span>
         </h2>
-        <p className="text-xs sm:text-sm text-slate-400">
+        <p className="text-xs sm:text-sm text-[var(--text-muted)]">
           Portfolio of Python GenAI microservices, 410+ GoDaddy client WordPress websites, and WooCommerce custom engineering.
         </p>
       </div>
@@ -35,8 +35,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
           onClick={() => setFilter('all')}
           className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
             filter === 'all'
-              ? 'bg-[#78cc6d] text-slate-950 font-bold shadow-md shadow-[#78cc6d]/20'
-              : 'bg-[#12171b] border border-[#282c30] text-slate-400 hover:text-white'
+              ? 'bg-[var(--accent-green)] text-slate-950 font-bold shadow-md'
+              : 'bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-main)]'
           }`}
         >
           All Works ({PORTFOLIO_DATA.projects.length})
@@ -45,8 +45,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
           onClick={() => setFilter('python-ai')}
           className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
             filter === 'python-ai'
-              ? 'bg-[#78cc6d] text-slate-950 font-bold shadow-md shadow-[#78cc6d]/20'
-              : 'bg-[#12171b] border border-[#282c30] text-slate-400 hover:text-white'
+              ? 'bg-[var(--accent-green)] text-slate-950 font-bold shadow-md'
+              : 'bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-main)]'
           }`}
         >
           Python & Gen AI
@@ -55,8 +55,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
           onClick={() => setFilter('wordpress')}
           className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
             filter === 'wordpress'
-              ? 'bg-[#78cc6d] text-slate-950 font-bold shadow-md shadow-[#78cc6d]/20'
-              : 'bg-[#12171b] border border-[#282c30] text-slate-400 hover:text-white'
+              ? 'bg-[var(--accent-green)] text-slate-950 font-bold shadow-md'
+              : 'bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-main)]'
           }`}
         >
           WordPress & WooCommerce
@@ -65,8 +65,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
           onClick={() => setFilter('fullstack')}
           className={`px-3.5 py-2 rounded-xl text-xs font-mono font-semibold transition-all ${
             filter === 'fullstack'
-              ? 'bg-[#78cc6d] text-slate-950 font-bold shadow-md shadow-[#78cc6d]/20'
-              : 'bg-[#12171b] border border-[#282c30] text-slate-400 hover:text-white'
+              ? 'bg-[var(--accent-green)] text-slate-950 font-bold shadow-md'
+              : 'bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-main)]'
           }`}
         >
           Full Stack
@@ -83,7 +83,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
             <div>
               {/* Category & Badge */}
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-mono text-[#78cc6d] uppercase tracking-widest bg-[#78cc6d]/10 px-2.5 py-0.5 rounded border border-[#78cc6d]/20">
+                <span className="text-[10px] font-mono text-[var(--accent-green)] uppercase tracking-widest bg-[var(--accent-green-bg)] px-2.5 py-0.5 rounded border border-[var(--accent-green)]/20">
                   {proj.category === 'python-ai' ? 'Python / AI' : proj.category === 'wordpress' ? 'WordPress / CMS' : 'Full Stack'}
                 </span>
                 {proj.featured && (
@@ -94,18 +94,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-white group-hover:text-[#78cc6d] transition-colors mb-2">
+              <h3 className="text-lg font-bold text-[var(--text-main)] group-hover:text-[var(--accent-green)] transition-colors mb-2">
                 {proj.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-3">
                 {proj.description}
               </p>
 
               {/* Metrics Badge */}
               {proj.metrics && (
-                <div className="p-2.5 rounded-xl bg-[#12171b] border border-[#282c30] text-xs font-mono text-[#38bdf8] mb-3">
+                <div className="p-2.5 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] text-xs font-mono text-[var(--accent-cyan)] mb-3">
                   ⚡ {proj.metrics}
                 </div>
               )}
@@ -117,7 +117,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
                 {proj.tags.map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] font-mono text-slate-400 bg-[#12171b] px-2 py-0.5 rounded border border-[#282c30]"
+                    className="text-[10px] font-mono text-[var(--text-muted)] bg-[var(--bg-body)] px-2 py-0.5 rounded border border-[var(--border-color)]"
                   >
                     {tag}
                   </span>
@@ -125,13 +125,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
               </div>
 
               {/* Action Links */}
-              <div className="flex items-center justify-between pt-3 border-t border-[#282c30]">
+              <div className="flex items-center justify-between pt-3 border-t border-[var(--border-color)]">
                 {proj.githubUrl ? (
                   <a
                     href={proj.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-[#78cc6d] transition-colors"
+                    className="flex items-center gap-1.5 text-xs font-mono text-[var(--text-main)] hover:text-[var(--accent-green)] transition-colors"
                   >
                     <GithubIcon className="w-4 h-4" />
                     <span>CODE</span>
@@ -143,7 +143,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ currentRole })
                     href={proj.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs font-mono text-[#78cc6d] hover:underline"
+                    className="flex items-center gap-1 text-xs font-mono text-[var(--accent-green)] hover:underline"
                   >
                     <span>DEMO</span>
                     <ArrowUpRight className="w-4 h-4" />
