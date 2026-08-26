@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
-import { Printer, CheckCircle2, Sparkles, Code2 } from 'lucide-react';
+import { Download, CheckCircle2, Sparkles, Code2, ExternalLink } from 'lucide-react';
 
 interface ResumeHubProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
@@ -10,6 +10,12 @@ interface ResumeHubProps {
 
 export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
   const [activeResumeTab, setActiveResumeTab] = useState<'python-ai' | 'wordpress-fullstack'>('python-ai');
+
+  const getResumeRoute = () => {
+    return activeResumeTab === 'python-ai'
+      ? '/resumes/python-developer'
+      : '/resumes/wordpress-developer';
+  };
 
   return (
     <div className="space-y-12 animate-in fade-in duration-300">
@@ -94,13 +100,17 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
             </div>
           </div>
 
-          <button
-            onClick={() => window.print()}
-            className="px-4 py-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] text-xs font-mono text-[var(--text-main)] hover:border-[var(--accent-green)]/40 transition-all flex items-center gap-1.5"
+          {/* Eye Catching Download Button */}
+          <a
+            href={getResumeRoute()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3 rounded-xl bg-[var(--accent-green)] text-slate-950 font-extrabold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent-green)]/20 shrink-0"
           >
-            <Printer className="w-4 h-4 text-[var(--accent-green)]" />
-            <span>PRINT / SAVE PDF</span>
-          </button>
+            <Download className="w-4 h-4" />
+            <span>GET FULL RESUME (PDF)</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         {/* Professional Summary */}
