@@ -59,17 +59,19 @@ export default function WordPressResumePage() {
           </p>
         </div>
 
-        {/* Core Skills */}
+        {/* Core Skills - Single Column */}
         <div className="space-y-1.5">
           <h2 className="text-xs font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-1">
             CORE SKILLS & TECHNICAL COMPETENCIES
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-slate-700 list-disc pl-5">
-            <li><strong>WordPress & CMS:</strong> Theme Customization & Dev, WooCommerce, ACF Pro, Oxygen Builder, Elementor, Beaver Builder</li>
-            <li><strong>Front-End:</strong> HTML5, CSS3, JavaScript (ES6+), jQuery, Vue.js, React, Bootstrap, Tailwind CSS</li>
-            <li><strong>Back-End:</strong> PHP, MySQL DB, Python, FastAPI, Pydantic, SQLAlchemy</li>
-            <li><strong>Performance Optimization:</strong> PageSpeed (70 → 95+), Core Web Vitals, Cross-browser Testing, Caching</li>
-            <li><strong>Design & Tools:</strong> Figma to Browser 1:1, Adobe Photoshop, Canva, Git, GitHub, CI/CD</li>
+          <ul className="space-y-1.5 text-slate-700 list-disc pl-5">
+            <li><strong>Front-End Development:</strong> HTML5, CSS3, JavaScript, jQuery, Vue.js, React</li>
+            <li><strong>CSS Frameworks:</strong> Bootstrap, Tailwind CSS</li>
+            <li><strong>WordPress:</strong> Theme customization & Development, Plugin integration, WooCommerce setup, Oxygen Builder, Elementor, Beaver Builder, ACF & Custom Plugins</li>
+            <li><strong>Back-End:</strong> Python, FastAPI, Pydantic, PHP, MySQL DB, SQLAlchemy</li>
+            <li><strong>Design & Tools:</strong> Figma, Adobe Photoshop, Canva</li>
+            <li><strong>Performance Optimization:</strong> PageSpeed, Core Web Vitals, Cross-browser testing</li>
+            <li><strong>Version Control & Other:</strong> Git, GitHub, REST API, CI/CD, Theme & Plugin API Integration, QA Collaboration</li>
           </ul>
         </div>
 
@@ -124,7 +126,7 @@ export default function WordPressResumePage() {
           <h2 className="text-xs font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-1">
             EDUCATION & CERTIFICATIONS
           </h2>
-          <div className="space-y-2 text-slate-700">
+          <div className="space-y-1 text-slate-700">
             <div><strong>Software Development Engineering with Applied AI:</strong> Masai School & IIT Patna (Feb 2026 – Ongoing)</div>
             <div><strong>Full Stack JavaScript Developer Certification:</strong> IBM (Oct 2025 – Nov 2025)</div>
             <div><strong>Bachelor of Engineering (B.E.) — Electrical & Electronics:</strong> PSN Institute of Technology & Science (2010 – 2014)</div>

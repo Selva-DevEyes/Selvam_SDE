@@ -59,18 +59,19 @@ export default function PythonResumePage() {
           </p>
         </div>
 
-        {/* Core Skills */}
+        {/* Core Skills - Single Column */}
         <div className="space-y-1.5">
           <h2 className="text-xs font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-1">
             CORE SKILLS & TECHNICAL COMPETENCIES
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-slate-700 list-disc pl-5">
+          <ul className="space-y-1.5 text-slate-700 list-disc pl-5">
             <li><strong>Python & Backend:</strong> Python 3, FastAPI, Pydantic, SQLAlchemy, REST API Design, PHP</li>
             <li><strong>Data Analysis & Databases:</strong> SQL, Pandas, Data Cleaning, EDA, Data Visualization, PostgreSQL, SQLite, MySQL</li>
             <li><strong>Applied GenAI:</strong> LLM Application Dev, Prompt Engineering (Masai & IIT Patna SDE Program)</li>
             <li><strong>Front-End:</strong> HTML5, CSS3, JavaScript (ES6+), React, Vue.js, Bootstrap, Tailwind CSS</li>
-            <li><strong>CMS & Web Platforms:</strong> WordPress (Theme Dev, WooCommerce, ACF, Elementor, Beaver Builder, Oxygen)</li>
+            <li><strong>CMS & Web Platforms:</strong> WordPress (Theme Dev, WooCommerce, ACF, Elementor, Beaver Builder, Oxygen Builder)</li>
             <li><strong>Engineering Practices:</strong> Git, GitHub, CI/CD, REST API Testing, PageSpeed Optimization (70 → 95+)</li>
+            <li><strong>Design & Tools:</strong> Figma, Adobe Photoshop, Canva</li>
           </ul>
         </div>
 
