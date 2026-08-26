@@ -37,20 +37,20 @@ export const PORTFOLIO_DATA = {
     portfolioUrl: "https://selva-deveyes.github.io/codeBySelvam",
     githubUrl: "https://github.com/Selva-DevEyes",
     linkedinUrl: "https://linkedin.com/in/selvam-s-2b201b252",
-    availability: "Available for Full-Time & High-Impact Contracts",
+    availability: "Available for Python, Backend & Data Analyst Roles",
   },
 
   roles: {
     'python-ai': {
-      title: "Python Developer & Gen AI Engineer",
-      badge: "Backend & Full-Stack AI Specialist",
-      tagline: "Engineering Robust REST APIs, Scalable Database Systems & Autonomous GenAI Applications",
-      summary: "Backend-focused developer with 6+ years of software and web engineering experience, with 1 year of dedicated learning & hands-on capstone project practice in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently completing an intensive Software Development Engineering with Applied AI program (Masai & IIT Patna), building full-stack Python projects covering REST API design, database architecture, and LLM-based application development. Brings a strong backend foundation from 6 years engineering 410+ production websites for GoDaddy's international client portfolio using PHP and MySQL. IBM-certified Full Stack JavaScript Developer.",
+      title: "Python Developer & Data Analyst",
+      badge: "Python, FastAPI & Data Analytics Specialist",
+      tagline: "Developing REST APIs, Data Processing Workflows & Extracting Insights from Structured Datasets",
+      summary: "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 410+ production websites. Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills.",
       heroPoints: [
-        "1 Year Learning & Capstone Practice in Python, FastAPI & SQLAlchemy",
-        "LLM-based Application Development & Prompt Engineering",
-        "Database Architecture & Query Optimization (PostgreSQL, SQLite, MySQL)",
-        "Proven 6-Year Engineering Track Record with 410+ Shipped Deployments"
+        "1 Year Hands-on Experience in Python, SQL, FastAPI & Pandas",
+        "REST APIs, Database Applications, CRUD & Data Workflows",
+        "SQL, Data Cleaning, Exploratory Data Analysis & Visualization",
+        "6+ Years Web Engineering Foundation with 410+ Production Sites"
       ]
     },
     'wordpress-fullstack': {
@@ -68,26 +68,26 @@ export const PORTFOLIO_DATA = {
   },
 
   stats: [
-    { value: "6+", label: "Years Experience", description: "In Web & Software Engineering" },
-    { value: "1 Year", label: "Python & FastAPI Practice", description: "Dedicated Learning & Capstone Builds" },
-    { value: "410+", label: "WordPress Deployments", description: "Delivered for GoDaddy International Portfolio" },
-    { value: "95+", label: "PageSpeed Index", description: "Engineered from ~70 via Core Web Vitals" }
+    { value: "6+", label: "Years Web Experience", description: "PHP, MySQL, JavaScript, Custom CMS" },
+    { value: "1 Year", label: "Python & Data Analysis", description: "Masai & IIT Patna SDE Program" },
+    { value: "410+", label: "Production Websites", description: "Delivered for GoDaddy International Portfolio" },
+    { value: "95+", label: "PageSpeed Score", description: "Boosted from ~70 via Core Web Vitals" }
   ],
 
   skills: {
     backend: [
-      { name: "Python 3", level: 90, tag: "1 Yr Capstone Practice" },
-      { name: "FastAPI", level: 88, tag: "1 Yr Capstone Practice" },
-      { name: "Pydantic", level: 85, tag: "Data Schemas" },
-      { name: "SQLAlchemy", level: 85, tag: "ORM" },
-      { name: "REST API Design", level: 92, tag: "Core" },
+      { name: "Python 3", level: 90, tag: "1 Yr Hands-on" },
+      { name: "FastAPI", level: 88, tag: "REST APIs" },
+      { name: "SQL & Relational DBs", level: 90, tag: "Core Data" },
+      { name: "Pandas & Data Analysis", level: 85, tag: "EDA & Cleaning" },
+      { name: "Pydantic & SQLAlchemy", level: 85, tag: "Schemas & ORM" },
       { name: "PHP", level: 85, tag: "Backend" },
     ],
     ai: [
-      { name: "GenAI & LLM App Dev", level: 85, tag: "Masai & IIT Patna" },
-      { name: "Prompt Engineering", level: 88, tag: "AI Logic" },
-      { name: "LangChain / RAG Concepts", level: 80, tag: "Applied AI" },
-      { name: "API Integrations", level: 92, tag: "AI & Cloud" },
+      { name: "Exploratory Data Analysis (EDA)", level: 88, tag: "Data Analysis" },
+      { name: "Data Visualization", level: 85, tag: "Insights" },
+      { name: "GenAI & LLM Integration", level: 85, tag: "Masai & IIT Patna" },
+      { name: "API Integrations & Workflows", level: 92, tag: "Automation" },
     ],
     cms: [
       { name: "WordPress (6+ Yrs)", level: 95, tag: "Expert" },
@@ -106,10 +106,10 @@ export const PORTFOLIO_DATA = {
       { name: "Bootstrap", level: 90, tag: "UI Framework" },
     ],
     database: [
-      { name: "PostgreSQL", level: 85, tag: "Relational" },
-      { name: "SQLite", level: 88, tag: "Lightweight" },
-      { name: "MySQL DB", level: 92, tag: "Production DB" },
-      { name: "Schema & Query Tuning", level: 88, tag: "Optimization" },
+      { name: "SQL (PostgreSQL / SQLite / MySQL)", level: 92, tag: "Query & Schema" },
+      { name: "Data Processing & ETL", level: 88, tag: "Workflows" },
+      { name: "Data Cleaning & Structuring", level: 88, tag: "Analytics" },
+      { name: "CRUD Operations", level: 92, tag: "Backend DB" },
     ],
     tools: [
       { name: "Git & GitHub", level: 90, tag: "Version Control" },
@@ -123,15 +123,15 @@ export const PORTFOLIO_DATA = {
   experiences: [
     {
       id: "exp-masai",
-      company: "Self-Directed Upskilling (Masai & IIT Patna)",
-      role: "Software Development Engineering with Applied AI Trainee",
+      company: "Masai School & IIT Patna SDE Program",
+      role: "Python Developer & Data Analyst Trainee",
       period: "Feb 2026 – Ongoing",
-      location: "Remote / Self-Directed",
+      location: "Remote / Intensive Track",
       category: "python-ai",
       highlights: [
-        "Completing an intensive, project-based program covering Python, FastAPI, Pydantic, SQLAlchemy, and applied Gen AI with 1 year of hands-on capstone practice.",
-        "Building full-stack Python projects applying REST API design, relational database architecture (PostgreSQL/SQLite), and LLM-based application development.",
-        "Engineered personal Python REST services and WordPress full-stack hybrid projects during career transition (Oct 2025 – Ongoing)."
+        "Completing an intensive program with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis.",
+        "Developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python.",
+        "Performing SQL queries, data cleaning, exploratory data analysis (EDA), and data visualization to extract insights from structured datasets."
       ]
     },
     {
@@ -191,13 +191,23 @@ export const PORTFOLIO_DATA = {
   projects: [
     {
       id: "proj-fastapi-ai",
-      title: "FastAPI GenAI Intelligence Backend",
+      title: "FastAPI REST Service & Data Analysis Engine",
       category: "python-ai",
-      description: "Asynchronous REST API service built with Python, FastAPI, Pydantic, and SQLAlchemy with integrated LLM prompt pipeline and SQL query optimization (1 Year Capstone Build).",
-      longDescription: "A full-stack backend platform featuring Pydantic schemas, dynamic database migrations with SQLAlchemy, JWT authentication, rate limiting, and an OpenAI/Gemini LLM prompt-driven automation layer for document analysis.",
-      tags: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "GenAI", "PostgreSQL"],
-      metrics: "Sub-50ms API Latency | 100% Async Pipeline",
+      description: "Asynchronous REST API service built with Python, FastAPI, SQL, Pydantic, and Pandas for structured data processing and CRUD workflows.",
+      longDescription: "Full-stack Python backend & data processing suite featuring Pydantic schemas, SQL query execution, Pandas data cleaning, and exploratory data visualization pipelines.",
+      tags: ["Python", "FastAPI", "SQL", "Pandas", "Data Analysis", "PostgreSQL"],
+      metrics: "Sub-50ms API Latency | Automated Data Processing",
       githubUrl: "https://github.com/Selva-DevEyes",
+      featured: true
+    },
+    {
+      id: "proj-python-sql-analytics",
+      title: "Python SQL Data Cleaning & EDA Pipeline",
+      category: "python-ai",
+      description: "Data analysis utility leveraging Python, SQL, and Pandas for exploratory data analysis (EDA), data cleaning, and automated report generation.",
+      longDescription: "Built as part of Masai School & IIT Patna SDE program to clean raw structured datasets, execute analytical SQL queries, and generate visual summaries.",
+      tags: ["Python", "SQL", "Pandas", "EDA", "Data Visualization"],
+      metrics: "Exploratory Analysis & Clean Dataset Ingestion",
       featured: true
     },
     {
@@ -230,16 +240,6 @@ export const PORTFOLIO_DATA = {
       tags: ["Vue.js", "React", "JavaScript", "Tailwind CSS", "HTML5"],
       metrics: "Used across 20+ Client Frontends",
       featured: false
-    },
-    {
-      id: "proj-python-sql-analytics",
-      title: "Python SQL Analytics & Data Ingestion Tool",
-      category: "python-ai",
-      description: "Data processing utility leveraging Python, SQLite, and PostgreSQL for automated data validation, schema mapping, and ETL reporting.",
-      longDescription: "Built as part of Masai & IIT Patna SDE program to handle bulk data ingestion, structured query execution, and automated report generation.",
-      tags: ["Python", "SQLite", "PostgreSQL", "Data Engineering", "Pydantic"],
-      metrics: "Bulk ETL Operations with Pydantic Validation",
-      featured: true
     }
   ] as Project[],
 
@@ -255,9 +255,9 @@ export const PORTFOLIO_DATA = {
   certifications: [
     {
       title: "Software Development Engineering with Applied AI",
-      issuer: "Masai & IIT Patna",
+      issuer: "Masai School & IIT Patna",
       period: "Feb 2026 – Ongoing",
-      skills: "Python, FastAPI, Pydantic, SQLAlchemy, Gen AI, REST API Design"
+      skills: "Python, SQL, FastAPI, Pandas, Data Analysis, REST APIs"
     },
     {
       title: "Full Stack JavaScript Developer Certification",

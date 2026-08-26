@@ -20,7 +20,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
           Role <span className="text-[var(--accent-green)]">Resumes</span>
         </h2>
         <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-          Targeted resume views tailored for Python Backend / AI roles or Enterprise WordPress / Full-Stack positions.
+          Targeted resume views tailored for Python Developer / Data Analyst roles or Enterprise WordPress / Full-Stack positions.
         </p>
       </div>
 
@@ -43,10 +43,10 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
             )}
           </div>
           <h3 className="text-base font-bold text-[var(--text-main)]">
-            Python Developer | Backend & Gen AI
+            Python Developer & Data Analyst
           </h3>
           <p className="text-xs text-[var(--text-muted)] mt-1">
-            FastAPI, Pydantic, SQLAlchemy, PostgreSQL, SQLite, Masai & IIT Patna SDE Program (1 Yr Capstone Practice).
+            Python, SQL, FastAPI, Pandas, Data Analysis, Masai & IIT Patna SDE Program.
           </p>
         </button>
 
@@ -54,7 +54,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
           onClick={() => setActiveResumeTab('wordpress-fullstack')}
           className={`p-5 rounded-2xl border text-left transition-all ${
             activeResumeTab === 'wordpress-fullstack'
-              ? 'bg-[var(--accent-cyan)]/10 border-[var(--accent-cyan)] shadow-md'
+              ? 'bg-[var(--accent-cyan-bg)] border-[var(--accent-cyan)] shadow-md'
               : 'bg-[var(--bg-body)] border-[var(--border-color)] hover:border-slate-400'
           }`}
         >
@@ -84,7 +84,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
             <h3 className="text-2xl font-extrabold text-[var(--text-main)]">SELVAM S</h3>
             <div className="text-xs font-mono font-bold text-[var(--accent-green)] mt-1">
               {activeResumeTab === 'python-ai'
-                ? 'PYTHON DEVELOPER | BACKEND & FULL-STACK | GEN AI'
+                ? 'PYTHON DEVELOPER & DATA ANALYST | BACKEND & FULL-STACK'
                 : 'WORDPRESS DEVELOPER [6 YEARS] | FULL-STACK | GEN AI'}
             </div>
             <div className="text-xs text-[var(--text-muted)] mt-2 flex flex-wrap gap-x-4 gap-y-1">
@@ -110,7 +110,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
           </h4>
           <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed bg-[var(--bg-card)] p-4 rounded-xl border border-[var(--border-color)]">
             {activeResumeTab === 'python-ai'
-              ? "Backend-focused developer with 6+ years of software and web engineering experience, with 1 year of dedicated learning & hands-on capstone project practice in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently completing an intensive Software Development Engineering with Applied AI program (Masai & IIT Patna), building full-stack Python projects covering REST API design, database architecture, and LLM-based application development. Brings a strong backend foundation from 6 years engineering 410+ production websites for GoDaddy's international client portfolio using PHP and MySQL. IBM-certified Full Stack JavaScript Developer."
+              ? "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 410+ production websites. Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills."
               : "WordPress Developer and Full Stack specialist with 6+ years of experience engineering 410 high-performance websites for international clients across the US, UK, Australia, and Canada. Former WordPress Integrator at vSplash Techlab (GoDaddy), consistently shipping 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion."}
           </p>
         </div>
@@ -118,24 +118,24 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
         {/* Key Achievements */}
         <div className="space-y-3">
           <h4 className="text-xs font-mono text-[var(--text-muted)] uppercase tracking-widest">
-            Key Achievements
+            Key Highlights & Skills
           </h4>
           <div className="grid sm:grid-cols-2 gap-3 text-xs text-[var(--text-muted)]">
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
-              <span><strong>1 Year</strong> intensive learning & capstone practice in Python, FastAPI & SQLAlchemy.</span>
+              <span><strong>1 Year</strong> hands-on experience in Python, SQL, FastAPI, Pandas & Data Analysis.</span>
             </div>
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
-              <span><strong>428+</strong> WordPress & backend integration projects shipped.</span>
+              <span><strong>REST APIs & Workflows</strong>: Experienced in developing CRUD operations & data workflows.</span>
             </div>
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
-              <span><strong>70 → 95+</strong> Google PageSpeed score improvement.</span>
+              <span><strong>EDA & Insights</strong>: Data cleaning, exploratory data analysis & visualization.</span>
             </div>
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
-              <span>Full-stack <strong>Python/FastAPI</strong> apps with Gen AI integration.</span>
+              <span><strong>6+ Years Web Foundation</strong> with 410+ production websites shipped.</span>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
             <div className="flex items-center justify-between p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div>
                 <div className="font-bold text-[var(--text-main)]">Software Development Engineering with Applied AI</div>
-                <div className="text-[var(--text-muted)]">Masai & IIT Patna (Feb 2026 – Ongoing)</div>
+                <div className="text-[var(--text-muted)]">Masai School & IIT Patna (Feb 2026 – Ongoing)</div>
               </div>
               <span className="text-[10px] font-mono text-[var(--accent-green)] bg-[var(--accent-green-bg)] px-2 py-0.5 rounded border border-[var(--accent-green)]/20">Active</span>
             </div>
@@ -158,7 +158,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
                 <div className="font-bold text-[var(--text-main)]">Full Stack JavaScript Developer Certification</div>
                 <div className="text-[var(--text-muted)]">IBM (Oct 2025 – Nov 2025)</div>
               </div>
-              <span className="text-[10px] font-mono text-[var(--accent-cyan)] bg-[var(--accent-cyan)]/10 px-2 py-0.5 rounded border border-[var(--accent-cyan)]/20">Verified</span>
+              <span className="text-[10px] font-mono text-[var(--accent-cyan)] bg-[var(--accent-cyan-bg)] px-2 py-0.5 rounded border border-[var(--accent-cyan)]/20">Verified</span>
             </div>
             <div className="flex items-center justify-between p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div>
