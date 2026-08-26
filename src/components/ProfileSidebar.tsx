@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
-import { Download, Mail, Phone, MapPin, Send, Check, Terminal, Code2, Sparkles, Sun, Moon } from 'lucide-react';
+import { Download, Mail, Terminal, Send, Sun, Moon } from 'lucide-react';
 
 interface ProfileSidebarProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
@@ -159,7 +159,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
             onClick={() => onRoleToggle('wordpress-fullstack')}
             className={`py-2 px-2 rounded-xl font-bold transition-all ${
               currentRole === 'wordpress-fullstack'
-                ? 'bg-[var(--accent-cyan)] text-slate-950 shadow-md'
+                ? 'bg-[var(--accent-cyan)] text-white shadow-md'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >

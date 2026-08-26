@@ -75,7 +75,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             onClick={() => onRoleToggle('wordpress-fullstack')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
               currentRole === 'wordpress-fullstack'
-                ? 'bg-[#38bdf8] text-slate-950 shadow-md'
+                ? 'bg-[var(--accent-cyan)] text-white shadow-md'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >

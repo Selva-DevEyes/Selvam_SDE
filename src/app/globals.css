@@ -10,7 +10,8 @@
   --text-muted: #9c9c9c;
   --accent-green: #78cc6d;
   --accent-green-bg: rgba(120, 204, 109, 0.12);
-  --accent-cyan: #38bdf8;
+  --accent-cyan: #2dd4bf;
+  --accent-cyan-bg: rgba(45, 212, 191, 0.12);
 }
 
 [data-theme="light"] {
@@ -23,7 +24,8 @@
   --text-muted: #64748b;
   --accent-green: #52b146;
   --accent-green-bg: rgba(82, 177, 70, 0.12);
-  --accent-cyan: #0284c7;
+  --accent-cyan: #0f766e;
+  --accent-cyan-bg: rgba(15, 118, 110, 0.12);
 }
 
 html {
