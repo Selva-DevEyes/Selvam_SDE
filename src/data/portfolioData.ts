@@ -45,9 +45,9 @@ export const PORTFOLIO_DATA = {
       title: "Python Developer & Gen AI Engineer",
       badge: "Backend & Full-Stack AI Specialist",
       tagline: "Engineering Robust REST APIs, Scalable Database Systems & Autonomous GenAI Applications",
-      summary: "Backend-focused engineer with 6+ years of total web experience, specializing in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently pursuing Software Development Engineering with Applied AI (Masai & IIT Patna), creating LLM-integrated microservices, relational database architectures, and data-driven systems.",
+      summary: "Backend-focused developer with 6+ years of software and web engineering experience, with 1 year of dedicated learning & hands-on capstone project practice in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently completing an intensive Software Development Engineering with Applied AI program (Masai & IIT Patna), building full-stack Python projects covering REST API design, database architecture, and LLM-based application development. Brings a strong backend foundation from 6 years engineering 410+ production websites for GoDaddy's international client portfolio using PHP and MySQL. IBM-certified Full Stack JavaScript Developer.",
       heroPoints: [
-        "Specializing in Python, FastAPI, Pydantic & SQLAlchemy",
+        "1 Year Learning & Capstone Practice in Python, FastAPI & SQLAlchemy",
         "LLM-based Application Development & Prompt Engineering",
         "Database Architecture & Query Optimization (PostgreSQL, SQLite, MySQL)",
         "Proven 6-Year Engineering Track Record with 410+ Shipped Deployments"
@@ -69,16 +69,16 @@ export const PORTFOLIO_DATA = {
 
   stats: [
     { value: "6+", label: "Years Experience", description: "In Web & Software Engineering" },
+    { value: "1 Year", label: "Python & FastAPI Practice", description: "Dedicated Learning & Capstone Builds" },
     { value: "410+", label: "WordPress Deployments", description: "Delivered for GoDaddy International Portfolio" },
-    { value: "95+", label: "PageSpeed Index", description: "Engineered from ~70 via Core Web Vitals" },
-    { value: "8–10", label: "Pages Shipped / Day", description: "Sustained high-speed pixel-perfect throughput" }
+    { value: "95+", label: "PageSpeed Index", description: "Engineered from ~70 via Core Web Vitals" }
   ],
 
   skills: {
     backend: [
-      { name: "Python 3", level: 90, tag: "Primary" },
-      { name: "FastAPI", level: 88, tag: "Primary" },
-      { name: "Pydantic", level: 85, tag: "Primary" },
+      { name: "Python 3", level: 90, tag: "1 Yr Capstone Practice" },
+      { name: "FastAPI", level: 88, tag: "1 Yr Capstone Practice" },
+      { name: "Pydantic", level: 85, tag: "Data Schemas" },
       { name: "SQLAlchemy", level: 85, tag: "ORM" },
       { name: "REST API Design", level: 92, tag: "Core" },
       { name: "PHP", level: 85, tag: "Backend" },
@@ -129,7 +129,7 @@ export const PORTFOLIO_DATA = {
       location: "Remote / Self-Directed",
       category: "python-ai",
       highlights: [
-        "Completing an intensive, project-based program covering Python, FastAPI, Pydantic, SQLAlchemy, and applied Gen AI.",
+        "Completing an intensive, project-based program covering Python, FastAPI, Pydantic, SQLAlchemy, and applied Gen AI with 1 year of hands-on capstone practice.",
         "Building full-stack Python projects applying REST API design, relational database architecture (PostgreSQL/SQLite), and LLM-based application development.",
         "Engineered personal Python REST services and WordPress full-stack hybrid projects during career transition (Oct 2025 – Ongoing)."
       ]
@@ -193,7 +193,7 @@ export const PORTFOLIO_DATA = {
       id: "proj-fastapi-ai",
       title: "FastAPI GenAI Intelligence Backend",
       category: "python-ai",
-      description: "Asynchronous REST API service built with Python, FastAPI, Pydantic, and SQLAlchemy with integrated LLM prompt pipeline and SQL query optimization.",
+      description: "Asynchronous REST API service built with Python, FastAPI, Pydantic, and SQLAlchemy with integrated LLM prompt pipeline and SQL query optimization (1 Year Capstone Build).",
       longDescription: "A full-stack backend platform featuring Pydantic schemas, dynamic database migrations with SQLAlchemy, JWT authentication, rate limiting, and an OpenAI/Gemini LLM prompt-driven automation layer for document analysis.",
       tags: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "GenAI", "PostgreSQL"],
       metrics: "Sub-50ms API Latency | 100% Async Pipeline",

@@ -46,7 +46,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
             Python Developer | Backend & Gen AI
           </h3>
           <p className="text-xs text-[var(--text-muted)] mt-1">
-            FastAPI, Pydantic, SQLAlchemy, PostgreSQL, SQLite, Masai & IIT Patna SDE Program.
+            FastAPI, Pydantic, SQLAlchemy, PostgreSQL, SQLite, Masai & IIT Patna SDE Program (1 Yr Capstone Practice).
           </p>
         </button>
 
@@ -110,7 +110,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
           </h4>
           <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed bg-[var(--bg-card)] p-4 rounded-xl border border-[var(--border-color)]">
             {activeResumeTab === 'python-ai'
-              ? "Backend-focused developer with 6+ years of software and web engineering experience, now specializing in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently completing an intensive Software Development Engineering with Applied AI program (Masai & IIT Patna), building full-stack Python projects covering REST API design, database architecture, and LLM-based application development. Brings a strong backend foundation from 6 years engineering 410+ production websites for GoDaddy's international client portfolio using PHP and MySQL. IBM-certified Full Stack JavaScript Developer."
+              ? "Backend-focused developer with 6+ years of software and web engineering experience, with 1 year of dedicated learning & hands-on capstone project practice in Python, FastAPI, Pydantic, and SQLAlchemy for REST API and database-driven application development. Currently completing an intensive Software Development Engineering with Applied AI program (Masai & IIT Patna), building full-stack Python projects covering REST API design, database architecture, and LLM-based application development. Brings a strong backend foundation from 6 years engineering 410+ production websites for GoDaddy's international client portfolio using PHP and MySQL. IBM-certified Full Stack JavaScript Developer."
               : "WordPress Developer and Full Stack specialist with 6+ years of experience engineering 410 high-performance websites for international clients across the US, UK, Australia, and Canada. Former WordPress Integrator at vSplash Techlab (GoDaddy), consistently shipping 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion."}
           </p>
         </div>
@@ -123,15 +123,15 @@ export const ResumeHub: React.FC<ResumeHubProps> = ({ currentRole }) => {
           <div className="grid sm:grid-cols-2 gap-3 text-xs text-[var(--text-muted)]">
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
+              <span><strong>1 Year</strong> intensive learning & capstone practice in Python, FastAPI & SQLAlchemy.</span>
+            </div>
+            <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
               <span><strong>428+</strong> WordPress & backend integration projects shipped.</span>
             </div>
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
               <span><strong>70 → 95+</strong> Google PageSpeed score improvement.</span>
-            </div>
-            <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
-              <span><strong>8–10</strong> pixel-perfect pages shipped daily at vSplash.</span>
             </div>
             <div className="p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
