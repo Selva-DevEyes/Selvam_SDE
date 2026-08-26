@@ -34,7 +34,7 @@ export const PORTFOLIO_DATA = {
     email: "selvamsde33@gmail.com",
     phonePrimary: "+91 8248552197",
     phoneSecondary: "+91 9489228575",
-    portfolioUrl: "https://selva-deveyes.github.io/codeBySelvam",
+    portfolioUrl: "https://selvam-sde.onrender.com/",
     githubUrl: "https://github.com/Selva-DevEyes",
     linkedinUrl: "https://linkedin.com/in/selvam-s-2b201b252",
     availability: "Available for Python, Backend & Data Analyst Roles",
@@ -218,7 +218,7 @@ export const PORTFOLIO_DATA = {
       longDescription: "Architected custom themes, Beaver Builder/Elementor integrations, and server-side caching layer. Delivered 8-10 pixel-perfect pages daily with custom PHP backend hooks.",
       tags: ["WordPress", "PHP", "MySQL", "WooCommerce", "ACF", "PageSpeed 95+"],
       metrics: "410+ Shipped Websites | 70 -> 95+ PageSpeed",
-      liveUrl: "https://selva-deveyes.github.io/codeBySelvam",
+      liveUrl: "https://selvam-sde.onrender.com/",
       featured: true
     },
     {

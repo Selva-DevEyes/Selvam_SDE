@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Selvam S | Python Developer & Full-Stack AI Engineer",
-  description: "Official portfolio of Selvam S. 6+ years of software & web engineering experience. Python, FastAPI, Pydantic, SQLAlchemy, GenAI, and 410+ shipped WordPress websites.",
-  keywords: ["Selvam S", "CodeBySelvam", "Python Developer", "FastAPI", "GenAI", "WordPress Developer", "Full Stack Developer", "Tirunelveli"],
+  title: "Selvam S | Python Developer & Data Analyst",
+  description: "Official portfolio of Selvam S. Python Developer & Data Analyst with 1 year hands-on experience in Python, SQL, FastAPI, Pandas & 6+ years web engineering foundation.",
+  keywords: ["Selvam S", "CodeBySelvam", "Python Developer", "Data Analyst", "FastAPI", "Pandas", "WordPress Developer", "Full Stack Developer", "Tirunelveli"],
   authors: [{ name: "Selvam S" }],
   openGraph: {
-    title: "Selvam S | Python Developer & Full-Stack AI Engineer",
-    description: "6+ years of software & web engineering experience specializing in Python, FastAPI, GenAI, and Enterprise Web Development.",
-    url: "https://selva-deveyes.github.io/codeBySelvam",
+    title: "Selvam S | Python Developer & Data Analyst",
+    description: "Python Developer & Data Analyst with 1 year hands-on experience in Python, SQL, FastAPI, Pandas, and 6+ years of web engineering experience.",
+    url: "https://selvam-sde.onrender.com/",
     siteName: "Selvam S Portfolio",
     locale: "en_US",
     type: "website",
@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#080c14] text-slate-100 selection:bg-emerald-500 selection:text-slate-950">
+      <body className="min-h-full flex flex-col bg-[var(--bg-body)] text-[var(--text-main)] selection:bg-[var(--accent-green)] selection:text-slate-950">
         {children}
       </body>
     </html>

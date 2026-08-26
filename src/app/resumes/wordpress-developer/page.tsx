@@ -43,7 +43,7 @@ export default function WordPressResumePage() {
             <span>Location: Tirunelveli, Tamil Nadu, 627357</span>
           </div>
           <div className="text-xs text-slate-600 flex flex-wrap justify-center gap-x-4 gap-y-1 pt-0.5 font-mono">
-            <span>Portfolio: selva-deveyes.github.io/codeBySelvam</span>
+            <span>Portfolio: selvam-sde.onrender.com</span>
             <span>GitHub: github.com/Selva-DevEyes</span>
             <span>LinkedIn: linkedin.com/in/selvam-s-2b201b252</span>
           </div>
@@ -124,7 +124,7 @@ export default function WordPressResumePage() {
           <h2 className="text-xs font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-1">
             EDUCATION & CERTIFICATIONS
           </h2>
-          <div className="space-y-1 text-slate-700">
+          <div className="space-y-2 text-slate-700">
             <div><strong>Software Development Engineering with Applied AI:</strong> Masai School & IIT Patna (Feb 2026 – Ongoing)</div>
             <div><strong>Full Stack JavaScript Developer Certification:</strong> IBM (Oct 2025 – Nov 2025)</div>
             <div><strong>Bachelor of Engineering (B.E.) — Electrical & Electronics:</strong> PSN Institute of Technology & Science (2010 – 2014)</div>
