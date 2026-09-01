@@ -9,6 +9,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  clientUrls?: { name: string; url: string }[];
 }
 
 export interface Experience {
@@ -190,6 +191,52 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
+      id: "proj-wowcodes-lms",
+      title: "WoWCodes LMS & SDE Evaluation Engine",
+      category: "python-ai",
+      description: "Modern full-stack web application designed for software developers to master technical skills and take employer-grade assessments.",
+      longDescription: "Features 14 learning paths, randomized quiz engine with Fisher-Yates option shuffling, study velocity analytics, JWT authentication, and cloud PostgreSQL integration.",
+      tags: ["React 19", "Redux Toolkit", "FastAPI", "SQLAlchemy", "Pydantic v2", "PostgreSQL", "Tailwind CSS", "Vite"],
+      metrics: "14 Learning Paths | Fisher-Yates Quiz Engine | Velocity Analytics",
+      liveUrl: "https://wowcodes-frontend.onrender.com/",
+      githubUrl: "https://github.com/Selva-DevEyes/WoWCodes_LMS",
+      featured: true
+    },
+    {
+      id: "proj-godaddy-corporate-wordpress",
+      title: "Enterprise WordPress Web Production (GoDaddy Portfolio)",
+      category: "wordpress",
+      description: "End-to-end WordPress web development delivering 410+ production client websites across GoDaddy's US, UK, AU & CA client portfolio.",
+      longDescription: "Handled complete end-to-end WordPress production: building from client requirement briefs, design files & copy docs, custom PHP backend settings, dynamic templates, WooCommerce setups, SEO tags, caching mechanisms, CRM webhooks, and manual QA across all screen sizes.",
+      tags: ["WordPress", "PHP", "MySQL", "Beaver Builder", "Elementor", "JavaScript", "CSS3", "WooCommerce"],
+      metrics: "410+ Production Sites | PageSpeed 95+ | 8–10 Pages Shipped / Day",
+      liveUrl: "https://woodward.consulting/",
+      featured: true,
+      clientUrls: [
+        { name: "Woodward Consulting", url: "https://woodward.consulting/" },
+        { name: "What To Find", url: "https://whatoofind.com/" },
+        { name: "Caramba Mex", url: "https://carambamex.com/" },
+        { name: "Travel Tastic Holidays UK", url: "https://traveltasticholidays.co.uk/" },
+        { name: "Brilliant Cup", url: "https://brilliantcup.com/" },
+        { name: "Phillips Slaughter Law", url: "https://phillipslaughter.com/" },
+        { name: "Aloha Interior Design", url: "https://alohainteriordesign.com/" },
+        { name: "RFC Parts", url: "https://rfcparts.com/" },
+        { name: "Avia Flight Academy", url: "https://aviaflightacademy.com/" },
+        { name: "AZ Watch Depot", url: "https://azwatchdepot.com/" },
+        { name: "Tyler Riggan Law", url: "https://tylerrigganlaw.com/" },
+        { name: "Royal Ortho Labs", url: "https://royalortholabs.com/" },
+        { name: "Remain Silent Law", url: "https://remainsilent.law/" },
+        { name: "IDS Nevada", url: "https://idsnv.com/" },
+        { name: "GS Cabinet Shop", url: "https://gscabinetshop.com/" },
+        { name: "Verge IT Solutions", url: "https://vergeit.com/" },
+        { name: "Eclectic Counseling", url: "https://eclecticcounseling.org/" },
+        { name: "Silvertree Woodworks", url: "https://silvertreewoodworks.com/" },
+        { name: "Community Home Care", url: "https://communityhomecare.org/" },
+        { name: "Uni Products Zambia", url: "https://uniproductszambia.com/" },
+        { name: "Patricia Fletcher", url: "https://patriciafletcher.com/" }
+      ]
+    },
+    {
       id: "proj-fastapi-ai",
       title: "FastAPI REST Service & Data Analysis Engine",
       category: "python-ai",
@@ -201,29 +248,8 @@ export const PORTFOLIO_DATA = {
       featured: true
     },
     {
-      id: "proj-python-sql-analytics",
-      title: "Python SQL Data Cleaning & EDA Pipeline",
-      category: "python-ai",
-      description: "Data analysis utility leveraging Python, SQL, and Pandas for exploratory data analysis (EDA), data cleaning, and automated report generation.",
-      longDescription: "Built as part of Masai School & IIT Patna SDE program to clean raw structured datasets, execute analytical SQL queries, and generate visual summaries.",
-      tags: ["Python", "SQL", "Pandas", "EDA", "Data Visualization"],
-      metrics: "Exploratory Analysis & Clean Dataset Ingestion",
-      featured: true
-    },
-    {
-      id: "proj-godaddy-portfolio",
-      title: "410+ GoDaddy Client Website Engine",
-      category: "wordpress",
-      description: "High-volume, enterprise WordPress client engine built for GoDaddy portfolio (US, UK, AU, CA accounts).",
-      longDescription: "Architected custom themes, Beaver Builder/Elementor integrations, and server-side caching layer. Delivered 8-10 pixel-perfect pages daily with custom PHP backend hooks.",
-      tags: ["WordPress", "PHP", "MySQL", "WooCommerce", "ACF", "PageSpeed 95+"],
-      metrics: "410+ Shipped Websites | 70 -> 95+ PageSpeed",
-      liveUrl: "https://selvam-sde.onrender.com/",
-      featured: true
-    },
-    {
       id: "proj-woocommerce-custom",
-      title: "High-Conversion WooCommerce Engine",
+      title: "High-Conversion WooCommerce Overhaul Engine",
       category: "wordpress",
       description: "Custom WooCommerce overhaul featuring custom checkout steps, dynamic ACF product fields, and payment gateway REST API integrations.",
       longDescription: "Rebuilt standard WooCommerce single-product layout and multi-step checkout workflow with AJAX cart updating, custom hooks in PHP, and high-converting mobile UI.",
@@ -232,13 +258,13 @@ export const PORTFOLIO_DATA = {
       featured: true
     },
     {
-      id: "proj-vue-frontend-hub",
-      title: "Interactive Vue.js & React Component Library",
-      category: "fullstack",
-      description: "Standardized UI design system with reactive components, customizable themes, and responsive layouts built with Tailwind & Vue.js.",
-      longDescription: "Reusable component suite engineered during tenure at Boostability, standardizing design tokens and accelerating developer velocity by 35%.",
-      tags: ["Vue.js", "React", "JavaScript", "Tailwind CSS", "HTML5"],
-      metrics: "Used across 20+ Client Frontends",
+      id: "proj-python-sql-analytics",
+      title: "Python SQL Data Cleaning & EDA Pipeline",
+      category: "python-ai",
+      description: "Data analysis utility leveraging Python, SQL, and Pandas for exploratory data analysis (EDA), data cleaning, and automated report generation.",
+      longDescription: "Built as part of Masai School & IIT Patna SDE program to clean raw structured datasets, execute analytical SQL queries, and generate visual summaries.",
+      tags: ["Python", "SQL", "Pandas", "EDA", "Data Visualization"],
+      metrics: "Exploratory Analysis & Clean Dataset Ingestion",
       featured: false
     }
   ] as Project[],
