@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
-import { Download, Mail, Terminal, Send, Sun, Moon } from 'lucide-react';
+import { Download, Mail, Send, Sun, Moon } from 'lucide-react';
 
 interface ProfileSidebarProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
@@ -21,7 +22,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   onThemeToggle,
 }) => {
   const titles = [
-    "Python Developer & Gen AI Engineer",
+    "Python Developer & Data Analyst",
     "WordPress Specialist (6+ Yrs)",
     "Full-Stack Web Architect",
     "GoDaddy 410+ Sites Shipped"
@@ -43,15 +44,16 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
         
         {/* Profile Image Frame with Glow */}
         <div className="relative group">
-          <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl bg-gradient-to-tr from-[var(--accent-green)] to-[var(--accent-cyan)] p-[3px] shadow-xl transition-transform duration-300 group-hover:scale-105">
-            <div className="w-full h-full bg-[var(--bg-body)] rounded-[13px] flex flex-col items-center justify-center p-3 text-center overflow-hidden relative transition-colors duration-300">
-              <Terminal className="w-12 h-12 text-[var(--accent-green)] mb-2 animate-bounce" />
-              <span className="text-xs font-mono font-bold text-[var(--text-main)] tracking-widest uppercase">
-                SELVAM S
-              </span>
-              <span className="text-[10px] text-[var(--accent-green)] font-mono mt-0.5 font-semibold">
-                Full-Stack / AI
-              </span>
+          <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl bg-gradient-to-tr from-[var(--accent-green)] to-[var(--accent-cyan)] p-[3px] shadow-xl transition-transform duration-300 group-hover:scale-105 overflow-hidden">
+            <div className="w-full h-full bg-[var(--bg-body)] rounded-[13px] overflow-hidden relative transition-colors duration-300">
+              <Image
+                src="/profile.jpg"
+                alt="Selvam S"
+                width={160}
+                height={160}
+                className="w-full h-full object-cover object-center"
+                priority
+              />
             </div>
           </div>
           <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-[var(--accent-green)] border-2 border-[var(--bg-card)] shadow-md" />
