@@ -30,17 +30,17 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   ];
 
   return (
-    <header className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-2 mb-6 flex flex-wrap items-center justify-between gap-2 shadow-xl sticky top-4 z-40 transition-colors duration-300">
+    <header className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-2 mb-6 flex flex-nowrap items-center justify-between gap-2 shadow-xl sticky top-4 z-40 transition-colors duration-300 overflow-x-auto">
       
-      {/* Navigation Tabs */}
-      <nav className="flex items-center gap-1 overflow-x-auto py-1 px-1 scrollbar-none w-full sm:w-auto">
+      {/* Navigation Tabs - Strict Single Horizontal Row */}
+      <nav className="flex items-center gap-1 flex-nowrap overflow-x-auto py-1 px-1 whitespace-nowrap scrollbar-none shrink-0">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-300 ${
+              className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-300 shrink-0 ${
                 isActive
                   ? 'bg-[var(--accent-green-bg)] text-[var(--accent-green)] border border-[var(--accent-green)]/40 shadow-sm'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-slate-800/20'
@@ -56,38 +56,38 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
       </nav>
 
       {/* Right Controls: Role Switcher & Theme Toggle */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 shrink-0">
         
-        {/* Role Switcher Pill */}
-        <div className="hidden md:flex items-center p-1 bg-[var(--bg-body)] rounded-xl border border-[var(--border-color)] text-xs">
-          <button
-            onClick={() => onRoleToggle('python-ai')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
-              currentRole === 'python-ai'
-                ? 'bg-[var(--accent-green)] text-slate-950 shadow-md'
-                : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
-            }`}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Python AI</span>
-          </button>
+        {/* Role Switcher Pill (WordPress Prioritized First) */}
+        <div className="hidden lg:flex items-center p-1 bg-[var(--bg-body)] rounded-xl border border-[var(--border-color)] text-xs">
           <button
             onClick={() => onRoleToggle('wordpress-fullstack')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
               currentRole === 'wordpress-fullstack'
-                ? 'bg-[var(--accent-cyan)] text-white shadow-md'
+                ? 'bg-[var(--accent-green)] text-slate-950 shadow-md'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >
             <Code2 className="w-3.5 h-3.5" />
             <span>WordPress</span>
           </button>
+          <button
+            onClick={() => onRoleToggle('python-ai')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
+              currentRole === 'python-ai'
+                ? 'bg-[var(--accent-cyan)] text-white shadow-md'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Python AI</span>
+          </button>
         </div>
 
         {/* Dark / Light Mode Toggle Button */}
         <button
           onClick={onThemeToggle}
-          className="p-2.5 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--accent-green)] hover:border-[var(--accent-green)]/40 transition-all flex items-center justify-center"
+          className="p-2.5 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--accent-green)] hover:border-[var(--accent-green)]/40 transition-all flex items-center justify-center shrink-0"
           title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
           aria-label="Toggle Dark/Light Theme"
         >

@@ -21,11 +21,12 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   theme,
   onThemeToggle,
 }) => {
+  // WordPress role prioritized first in titles array
   const titles = [
-    "Python Developer & Data Analyst",
-    "WordPress Specialist (6+ Yrs)",
+    "WordPress Developer [6+ Yrs]",
     "Full-Stack Web Architect",
-    "GoDaddy 410+ Sites Shipped"
+    "GoDaddy 410+ Sites Shipped",
+    "Python Developer & Data Analyst"
   ];
   const [titleIdx, setTitleIdx] = useState(0);
 
@@ -42,21 +43,21 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
       {/* Top Profile Header */}
       <div className="flex flex-col items-center text-center space-y-4">
         
-        {/* Profile Image Frame with Glow */}
+        {/* Profile Image Frame with White Background & Balanced Margins */}
         <div className="relative group">
-          <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl bg-gradient-to-tr from-[var(--accent-green)] to-[var(--accent-cyan)] p-[3px] shadow-xl transition-transform duration-300 group-hover:scale-105 overflow-hidden">
-            <div className="w-full h-full bg-[var(--bg-body)] rounded-[13px] overflow-hidden relative transition-colors duration-300">
+          <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl bg-white p-1.5 shadow-2xl border-2 border-white transition-transform duration-300 group-hover:scale-105 overflow-hidden">
+            <div className="w-full h-full bg-white rounded-xl overflow-hidden relative flex items-center justify-center">
               <Image
                 src="/profile.jpg"
                 alt="Selvam S"
                 width={160}
                 height={160}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center rounded-xl bg-white"
                 priority
               />
             </div>
           </div>
-          <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-[var(--accent-green)] border-2 border-[var(--bg-card)] shadow-md" />
+          <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-[var(--accent-green)] border-2 border-white shadow-md" />
         </div>
 
         {/* Name & Subtitle */}
@@ -137,35 +138,35 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
         </div>
         <div className="flex justify-between items-center">
           <span className="text-[var(--text-muted)] font-mono">WP DEPLOYMENTS:</span>
-          <span className="font-semibold text-[var(--accent-cyan)]">410+ Sites</span>
+          <span className="font-semibold text-[var(--accent-green)] font-bold">410+ Sites</span>
         </div>
       </div>
 
-      {/* Role Focus Switcher Toggle */}
+      {/* Role Focus Switcher Toggle (WordPress Prioritized First) */}
       <div className="p-2 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] mb-6 space-y-1.5 transition-colors duration-300">
         <div className="text-[10px] font-mono text-[var(--text-muted)] text-center uppercase tracking-widest">
           Active Role Perspective
         </div>
         <div className="grid grid-cols-2 gap-1.5 text-[11px]">
           <button
-            onClick={() => onRoleToggle('python-ai')}
+            onClick={() => onRoleToggle('wordpress-fullstack')}
             className={`py-2 px-2 rounded-xl font-bold transition-all ${
-              currentRole === 'python-ai'
+              currentRole === 'wordpress-fullstack'
                 ? 'bg-[var(--accent-green)] text-slate-950 shadow-md'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >
-            Python AI
+            WordPress [6+ Yrs]
           </button>
           <button
-            onClick={() => onRoleToggle('wordpress-fullstack')}
+            onClick={() => onRoleToggle('python-ai')}
             className={`py-2 px-2 rounded-xl font-bold transition-all ${
-              currentRole === 'wordpress-fullstack'
+              currentRole === 'python-ai'
                 ? 'bg-[var(--accent-cyan)] text-white shadow-md'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >
-            WordPress
+            Python AI
           </button>
         </div>
       </div>

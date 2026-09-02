@@ -13,7 +13,8 @@ import { BackgroundAnimation } from '@/components/BackgroundAnimation';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<string>('about');
-  const [currentRole, setCurrentRole] = useState<'python-ai' | 'wordpress-fullstack'>('python-ai');
+  // Default prioritized role set to 'wordpress-fullstack' as requested
+  const [currentRole, setCurrentRole] = useState<'python-ai' | 'wordpress-fullstack'>('wordpress-fullstack');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   // Load theme preference
@@ -80,7 +81,7 @@ export default function Home() {
           {/* Right Main Content Window */}
           <div className="flex-1 w-full min-w-0">
             
-            {/* Top Floating Navigation Header */}
+            {/* Top Floating Navigation Header in Single Row */}
             <HeaderNav
               activeTab={activeTab}
               onTabChange={setActiveTab}
