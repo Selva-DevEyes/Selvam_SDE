@@ -29,9 +29,9 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
   ];
 
   return (
-    <header className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-2 mb-6 flex flex-nowrap items-center justify-between gap-2 shadow-xl sticky top-4 z-40 transition-colors duration-300 overflow-x-auto">
+    <header className="hidden lg:flex bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-2 mb-6 flex-nowrap items-center justify-between gap-2 shadow-xl sticky top-4 z-40 transition-colors duration-300">
       
-      {/* Navigation Tabs - Single Unified Horizontal Row */}
+      {/* Desktop Navigation Tabs - Single Row */}
       <nav className="flex items-center gap-1 flex-nowrap overflow-x-auto py-1 px-1 whitespace-nowrap scrollbar-none shrink-0">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id || (activeTab === 'resumes' && tab.id === 'resume');
@@ -39,7 +39,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-300 shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-300 shrink-0 ${
                 isActive
                   ? 'bg-[var(--accent-green-bg)] text-[var(--accent-green)] border border-[var(--accent-green)]/40 shadow-sm'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-slate-800/20'
@@ -58,7 +58,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
       <div className="flex items-center gap-2 shrink-0">
         
         {/* Role Switcher Pill */}
-        <div className="hidden lg:flex items-center p-1 bg-[var(--bg-body)] rounded-xl border border-[var(--border-color)] text-xs">
+        <div className="flex items-center p-1 bg-[var(--bg-body)] rounded-xl border border-[var(--border-color)] text-xs">
           <button
             onClick={() => onRoleToggle('wordpress-fullstack')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${

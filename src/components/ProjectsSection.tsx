@@ -11,7 +11,6 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   const [filter, setFilter] = useState<'all' | 'wordpress' | 'python-ai'>('all');
-  // Open live client list drawer by default for GoDaddy WordPress project
   const [expandedClientListId, setExpandedClientListId] = useState<string | null>('proj-godaddy-corporate-wordpress');
 
   const projects = PORTFOLIO_DATA.projects.filter((p) => {
@@ -20,12 +19,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   });
 
   return (
-    <div className="space-y-10 animate-in fade-in duration-300">
+    <div className="space-y-8 sm:space-y-10 animate-in fade-in duration-300">
       
       {/* Title & Role Priority Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] tracking-tight title-line">
+          <h2 className="text-xl sm:text-3xl font-extrabold text-[var(--text-main)] tracking-tight title-line">
             Featured <span className="text-[var(--accent-green)]">Works & Projects</span>
           </h2>
           <p className="text-xs sm:text-sm text-[var(--text-muted)]">
@@ -34,10 +33,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex items-center gap-1.5 p-1 bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] text-xs shrink-0 self-start sm:self-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] text-xs shrink-0 self-start sm:self-auto overflow-x-auto max-w-full">
           <button
             onClick={() => setFilter('all')}
-            className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg font-bold transition-all whitespace-nowrap ${
               filter === 'all'
                 ? 'bg-[var(--accent-green)] text-slate-950 shadow-sm'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
@@ -47,7 +46,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
           </button>
           <button
             onClick={() => setFilter('wordpress')}
-            className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg font-bold transition-all whitespace-nowrap ${
               filter === 'wordpress'
                 ? 'bg-[var(--accent-green)] text-slate-950 shadow-sm'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
@@ -57,7 +56,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
           </button>
           <button
             onClick={() => setFilter('python-ai')}
-            className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg font-bold transition-all whitespace-nowrap ${
               filter === 'python-ai'
                 ? 'bg-[var(--accent-cyan)] text-white shadow-sm'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
@@ -69,7 +68,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
         {projects.map((proj) => {
           const isWordpress = proj.category === 'wordpress';
           const isExpanded = expandedClientListId === proj.id;
@@ -77,15 +76,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
           return (
             <div
               key={proj.id}
-              className={`p-6 rounded-2xl bg-[var(--bg-body)] border transition-all duration-300 flex flex-col justify-between space-y-4 group shadow-xl ${
+              className={`p-5 sm:p-6 rounded-2xl bg-[var(--bg-body)] border transition-all duration-300 flex flex-col justify-between space-y-4 group shadow-xl ${
                 isWordpress && proj.clientUrls
                   ? 'border-[var(--accent-green)]/60 bg-[var(--accent-green-bg)]/10 ring-1 ring-[var(--accent-green)]/20'
                   : 'border-[var(--border-color)] hover:border-[var(--accent-green)]/40'
               }`}
             >
               <div className="space-y-3">
-                {/* Category & Badge */}
-                <div className="flex items-center justify-between">
+                {/* Category & Badge Header Row */}
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span
                     className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${
                       isWordpress
@@ -97,20 +96,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                   </span>
 
                   {proj.featured && (
-                    <span className="text-[10px] font-mono text-[var(--accent-green)] flex items-center gap-1 font-bold">
+                    <span className="text-[10px] font-mono text-[var(--accent-green)] flex items-center gap-1 font-bold shrink-0">
                       <Sparkles className="w-3 h-3" /> FEATURED WORK
                     </span>
                   )}
                 </div>
 
-                {/* Project Title */}
-                <h3 className="text-lg font-bold text-[var(--text-main)] group-hover:text-[var(--accent-green)] transition-colors">
+                {/* Project Title with Clean Line Break Handling */}
+                <h3 className="text-base sm:text-lg font-bold text-[var(--text-main)] group-hover:text-[var(--accent-green)] transition-colors break-words leading-snug">
                   {proj.title}
                 </h3>
 
                 {/* Metrics Highlight */}
                 {proj.metrics && (
-                  <div className="text-xs font-mono text-[var(--accent-green)] bg-[var(--bg-card)] p-2.5 rounded-lg border border-[var(--border-color)] font-semibold">
+                  <div className="text-[11px] sm:text-xs font-mono text-[var(--accent-green)] bg-[var(--bg-card)] p-2.5 rounded-lg border border-[var(--border-color)] font-semibold break-words">
                     ⚡ {proj.metrics}
                   </div>
                 )}
@@ -144,19 +143,19 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                   <div className="pt-2 border-t border-[var(--border-color)]">
                     <button
                       onClick={() => setExpandedClientListId(isExpanded ? null : proj.id)}
-                      className="w-full flex items-center justify-between text-xs font-mono font-bold text-slate-950 bg-[var(--accent-green)] p-3 rounded-xl hover:opacity-90 transition-all shadow-md"
+                      className="w-full flex items-center justify-between text-xs font-mono font-bold text-slate-950 bg-[var(--accent-green)] p-2.5 sm:p-3 rounded-xl hover:opacity-90 transition-all shadow-md"
                     >
-                      <span className="flex items-center gap-2">
-                        <Globe className="w-4 h-4" />
-                        <span>VERIFIED LIVE CLIENT WEBSITES ({proj.clientUrls.length})</span>
+                      <span className="flex items-center gap-1.5 sm:gap-2 truncate">
+                        <Globe className="w-4 h-4 shrink-0" />
+                        <span className="truncate">VERIFIED LIVE CLIENT SITES ({proj.clientUrls.length})</span>
                       </span>
-                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      {isExpanded ? <ChevronUp className="w-4 h-4 shrink-0" /> : <ChevronDown className="w-4 h-4 shrink-0" />}
                     </button>
 
                     {isExpanded && (
-                      <div className="mt-3 p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--accent-green)]/30 space-y-2 max-h-64 overflow-y-auto scrollbar-thin">
+                      <div className="mt-3 p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--accent-green)]/30 space-y-2 max-h-60 overflow-y-auto pr-1">
                         <div className="text-[10px] font-mono text-[var(--accent-green)] uppercase tracking-wider font-bold mb-2 flex items-center gap-1">
-                          <CheckCircle2 className="w-3.5 h-3.5" /> 21 Live Client Sites Delivered at vSplash (GoDaddy):
+                          <CheckCircle2 className="w-3.5 h-3.5" /> 21 Live Client Sites Shipped at GoDaddy Portfolio:
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                           {proj.clientUrls.map((client, idx) => (
@@ -165,10 +164,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                               href={client.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="p-2 rounded-lg bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-main)] hover:text-[var(--accent-green)] hover:border-[var(--accent-green)]/40 transition-all flex items-center justify-between text-[11px] font-mono"
+                              className="p-2 rounded-lg bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-main)] hover:text-[var(--accent-green)] hover:border-[var(--accent-green)]/40 transition-all flex items-center justify-between text-[11px] font-mono group/item"
                             >
-                              <span className="truncate">{client.name}</span>
-                              <ExternalLink className="w-3 h-3 text-[var(--accent-green)] shrink-0 ml-1" />
+                              <span className="truncate pr-1">{client.name}</span>
+                              <ExternalLink className="w-3 h-3 text-[var(--accent-green)] shrink-0 group-hover/item:scale-110 transition-transform" />
                             </a>
                           ))}
                         </div>
@@ -179,7 +178,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
               </div>
 
               {/* Action Footer Buttons */}
-              <div className="flex items-center gap-3 pt-4 border-t border-[var(--border-color)]">
+              <div className="flex items-center gap-2 sm:gap-3 pt-4 border-t border-[var(--border-color)]">
                 {proj.liveUrl && (
                   <a
                     href={proj.liveUrl}
