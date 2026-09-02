@@ -21,7 +21,6 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   theme,
   onThemeToggle,
 }) => {
-  // WordPress role prioritized first in titles array
   const titles = [
     "WordPress Developer [6+ Yrs]",
     "Full-Stack Web Architect",
@@ -38,7 +37,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   }, []);
 
   return (
-    <div className="w-full lg:w-[340px] shrink-0 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-colors duration-300">
+    <div className="w-full lg:w-[340px] shrink-0 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-colors duration-300 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-48px)] lg:overflow-y-auto z-30">
       
       {/* Top Profile Header */}
       <div className="flex flex-col items-center text-center space-y-4">
