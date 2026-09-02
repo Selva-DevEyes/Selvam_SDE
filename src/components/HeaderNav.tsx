@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { User, Briefcase, Cpu, FolderGit2, FileText, Mail, Sparkles, Code2, Sun, Moon } from 'lucide-react';
+import { User, Briefcase, Cpu, FolderGit2, Mail, Sparkles, Code2, Sun, Moon } from 'lucide-react';
 
 interface HeaderNavProps {
   activeTab: string;
@@ -22,20 +22,19 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 }) => {
   const tabs = [
     { id: 'about', label: 'ABOUT', icon: <User className="w-4 h-4" /> },
-    { id: 'resume', label: 'RESUME', icon: <Briefcase className="w-4 h-4" /> },
+    { id: 'resume', label: 'RESUME & CV', icon: <Briefcase className="w-4 h-4" /> },
     { id: 'skills', label: 'SKILLS', icon: <Cpu className="w-4 h-4" /> },
     { id: 'projects', label: 'WORKS', icon: <FolderGit2 className="w-4 h-4" /> },
-    { id: 'resumes', label: 'CV HUB', icon: <FileText className="w-4 h-4" /> },
     { id: 'contact', label: 'CONTACT', icon: <Mail className="w-4 h-4" /> },
   ];
 
   return (
     <header className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-2 mb-6 flex flex-nowrap items-center justify-between gap-2 shadow-xl sticky top-4 z-40 transition-colors duration-300 overflow-x-auto">
       
-      {/* Navigation Tabs - Strict Single Horizontal Row */}
+      {/* Navigation Tabs - Single Unified Horizontal Row */}
       <nav className="flex items-center gap-1 flex-nowrap overflow-x-auto py-1 px-1 whitespace-nowrap scrollbar-none shrink-0">
         {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
+          const isActive = activeTab === tab.id || (activeTab === 'resumes' && tab.id === 'resume');
           return (
             <button
               key={tab.id}
@@ -58,7 +57,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
       {/* Right Controls: Role Switcher & Theme Toggle */}
       <div className="flex items-center gap-2 shrink-0">
         
-        {/* Role Switcher Pill (WordPress Prioritized First) */}
+        {/* Role Switcher Pill */}
         <div className="hidden lg:flex items-center p-1 bg-[var(--bg-body)] rounded-xl border border-[var(--border-color)] text-xs">
           <button
             onClick={() => onRoleToggle('wordpress-fullstack')}

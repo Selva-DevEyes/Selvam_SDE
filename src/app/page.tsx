@@ -7,13 +7,11 @@ import { AboutSection } from '@/components/AboutSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { SkillsSection } from '@/components/SkillsSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
-import { ResumeHub } from '@/components/ResumeHub';
 import { ContactSection } from '@/components/ContactSection';
 import { BackgroundAnimation } from '@/components/BackgroundAnimation';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<string>('about');
-  // Default prioritized role set to 'wordpress-fullstack' as requested
   const [currentRole, setCurrentRole] = useState<'python-ai' | 'wordpress-fullstack'>('wordpress-fullstack');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
@@ -40,7 +38,7 @@ export default function Home() {
   };
 
   const handleNavigate = (tabId: string) => {
-    setActiveTab(tabId);
+    setActiveTab(tabId === 'resumes' ? 'resume' : tabId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -81,7 +79,7 @@ export default function Home() {
           {/* Right Main Content Window */}
           <div className="flex-1 w-full min-w-0">
             
-            {/* Top Floating Navigation Header in Single Row */}
+            {/* Top Floating Navigation Header */}
             <HeaderNav
               activeTab={activeTab}
               onTabChange={setActiveTab}
@@ -96,7 +94,7 @@ export default function Home() {
               {activeTab === 'about' && (
                 <AboutSection currentRole={currentRole} />
               )}
-              {activeTab === 'resume' && (
+              {(activeTab === 'resume' || activeTab === 'resumes') && (
                 <ExperienceSection currentRole={currentRole} />
               )}
               {activeTab === 'skills' && (
@@ -104,9 +102,6 @@ export default function Home() {
               )}
               {activeTab === 'projects' && (
                 <ProjectsSection currentRole={currentRole} />
-              )}
-              {activeTab === 'resumes' && (
-                <ResumeHub currentRole={currentRole} />
               )}
               {activeTab === 'contact' && (
                 <ContactSection currentRole={currentRole} />
