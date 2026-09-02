@@ -21,95 +21,44 @@ export const BackgroundAnimation: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle setup for constellation / particle mesh effect
-    const particlesCount = Math.min(Math.floor(window.innerWidth / 18), 75);
-    const particles: {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      alpha: number;
-    }[] = [];
-
-    for (let i = 0; i < particlesCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 1.8 + 0.8,
-        alpha: Math.random() * 0.5 + 0.2,
-      });
-    }
+    // Glowing Ambient Orbs for smooth, high-end, non-distracting background
+    const orbs = [
+      { x: canvas.width * 0.2, y: canvas.height * 0.25, radius: 280, vx: 0.3, vy: 0.2, color: 'rgba(120, 204, 109, 0.08)' },
+      { x: canvas.width * 0.8, y: canvas.height * 0.75, radius: 340, vx: -0.25, vy: -0.35, color: 'rgba(15, 118, 110, 0.12)' },
+      { x: canvas.width * 0.5, y: canvas.height * 0.5, radius: 240, vx: -0.2, vy: 0.3, color: 'rgba(52, 211, 153, 0.06)' },
+      { x: canvas.width * 0.85, y: canvas.height * 0.2, radius: 220, vx: 0.15, vy: -0.2, color: 'rgba(120, 204, 109, 0.06)' }
+    ];
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw background ambient gradient glows
-      const grad1 = ctx.createRadialGradient(
-        canvas.width * 0.2,
-        canvas.height * 0.2,
-        10,
-        canvas.width * 0.2,
-        canvas.height * 0.2,
-        canvas.width * 0.4
-      );
-      grad1.addColorStop(0, 'rgba(120, 204, 109, 0.04)');
-      grad1.addColorStop(1, 'transparent');
-      ctx.fillStyle = grad1;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Move & render each soft glowing ambient orb
+      orbs.forEach((orb) => {
+        orb.x += orb.vx;
+        orb.y += orb.vy;
 
-      const grad2 = ctx.createRadialGradient(
-        canvas.width * 0.8,
-        canvas.height * 0.7,
-        10,
-        canvas.width * 0.8,
-        canvas.height * 0.7,
-        canvas.width * 0.4
-      );
-      grad2.addColorStop(0, 'rgba(15, 118, 110, 0.05)');
-      grad2.addColorStop(1, 'transparent');
-      ctx.fillStyle = grad2;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Bounce gently off screen boundaries
+        if (orb.x < -100 || orb.x > canvas.width + 100) orb.vx *= -1;
+        if (orb.y < -100 || orb.y > canvas.height + 100) orb.vy *= -1;
 
-      // Connect particle lines (RyanCV Constellation effect)
-      for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
+        const gradient = ctx.createRadialGradient(
+          orb.x,
+          orb.y,
+          0,
+          orb.x,
+          orb.y,
+          orb.radius
+        );
 
-        // Move particle
-        p1.x += p1.vx;
-        p1.y += p1.vy;
+        gradient.addColorStop(0, orb.color);
+        gradient.addColorStop(0.5, orb.color.replace('0.', '0.04'));
+        gradient.addColorStop(1, 'transparent');
 
-        if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
-        if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
-
-        // Draw particle dot
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(p1.x, p1.y, p1.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(120, 204, 109, ${p1.alpha})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = '#78cc6d';
+        ctx.arc(orb.x, orb.y, orb.radius, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0;
-
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            const lineAlpha = (1 - dist / 130) * 0.15;
-            ctx.strokeStyle = `rgba(120, 204, 109, ${lineAlpha})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
+      });
 
       animationFrameId = requestAnimationFrame(draw);
     };
@@ -125,7 +74,7 @@ export const BackgroundAnimation: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-80"
+      className="fixed inset-0 pointer-events-none z-0 opacity-100 transition-opacity duration-1000"
     />
   );
 };
