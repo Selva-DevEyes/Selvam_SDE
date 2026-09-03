@@ -38,7 +38,7 @@ export const PORTFOLIO_DATA = {
     portfolioUrl: "https://selvam-sde.onrender.com/",
     githubUrl: "https://github.com/Selva-DevEyes",
     linkedinUrl: "https://linkedin.com/in/selvam-s-2b201b252",
-    availability: "Available for Python, Backend & Data Analyst Roles",
+    availability: "Available for WordPress, Full-Stack & Python Roles",
   },
 
   roles: {
@@ -46,7 +46,7 @@ export const PORTFOLIO_DATA = {
       title: "Python Developer & Data Analyst",
       badge: "Python, FastAPI & Data Analytics Specialist",
       tagline: "Developing REST APIs, Data Processing Workflows & Extracting Insights from Structured Datasets",
-      summary: "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 450+ total production web projects (410+ for GoDaddy portfolio). Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills.",
+      summary: "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 450+ total production web projects (including 410+ for GoDaddy portfolio). Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills.",
       heroPoints: [
         "1 Year Hands-on Experience in Python, SQL, FastAPI & Pandas",
         "REST APIs, Database Applications, CRUD & Data Workflows",
@@ -60,7 +60,7 @@ export const PORTFOLIO_DATA = {
       tagline: "Building High-Performance Websites, Custom Themes & WooCommerce Architecture Shipped for 450+ International Clients",
       summary: "WordPress Developer and Full Stack Specialist with 6+ years of experience engineering 450+ high-performance WordPress, HTML, and backend projects for international clients across the US, UK, Australia, and Canada — including 410+ production websites delivered for GoDaddy's portfolio at vSplash Techlab, and 40+ custom projects delivered across prior engineering roles. Consistently shipped 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion.",
       heroPoints: [
-        "450+ WordPress & HTML Projects Shipped (410+ GoDaddy + 40+ Client Builds)",
+        "450+ Total Shipped Web Projects (410+ GoDaddy + 40+ Client Builds)",
         "Google PageSpeed Optimization Boost (70 → 95+ Average)",
         "Custom WP Themes, WooCommerce & ACF Dynamic Templates",
         "Sustained 8–10 Pixel-Perfect Pages Daily Throughput"
@@ -70,7 +70,7 @@ export const PORTFOLIO_DATA = {
 
   stats: [
     { value: "6+", label: "Years Web Experience", description: "PHP, MySQL, JavaScript, Custom CMS" },
-    { value: "450+", label: "WordPress & HTML Projects", description: "410+ GoDaddy + 40+ Client Builds" },
+    { value: "450+", label: "Total Shipped Projects", description: "410+ GoDaddy + 40+ Client Builds" },
     { value: "1 Year", label: "Python & Data Analysis", description: "Masai & IIT Patna SDE Program" },
     { value: "95+", label: "PageSpeed Score", description: "Boosted from ~70 via Core Web Vitals" }
   ],
@@ -130,7 +130,7 @@ export const PORTFOLIO_DATA = {
       location: "Tirunelveli, India",
       category: "wordpress",
       highlights: [
-        "Engineered 410+ production-ready websites for GoDaddy's US, UK, AU & CA client portfolio, using PHP and MySQL to extend backend logic beyond standard builder capabilities.",
+        "Engineered 410+ production-ready websites for GoDaddy's US, UK, AU & CA client portfolio (part of 450+ total career web builds), using PHP and MySQL to extend backend logic.",
         "Integrated and maintained REST API-based plugin and third-party service connections, shipping 8–10 pixel-perfect pages daily using Beaver Builder and Elementor.",
         "Optimized application performance (server-side caching, image compression, lazy loading, CDN configuration), boosting Google PageSpeed scores from ~70 to 95+.",
         "Overhauled WooCommerce product, cart, and checkout logic with conversion-focused UX improvements, directly supporting client revenue and retention goals.",
@@ -192,12 +192,12 @@ export const PORTFOLIO_DATA = {
   projects: [
     {
       id: "proj-godaddy-corporate-wordpress",
-      title: "Enterprise WordPress Web Production (GoDaddy Portfolio)",
+      title: "Enterprise WordPress Web Production (450+ Total Builds / 410+ GoDaddy)",
       category: "wordpress",
-      description: "End-to-end WordPress web development delivering 410+ production client websites across GoDaddy's US, UK, AU & CA client portfolio.",
+      description: "End-to-end WordPress web development delivering 450+ total web builds across GoDaddy's US, UK, AU & CA client accounts and prior agency roles.",
       longDescription: "Handled complete end-to-end WordPress production: building from client requirement briefs, design files & copy docs, custom PHP backend settings, dynamic templates, WooCommerce setups, SEO tags, caching mechanisms, CRM webhooks, and manual QA across all screen sizes.",
       tags: ["WordPress", "PHP", "MySQL", "Beaver Builder", "Elementor", "JavaScript", "CSS3", "WooCommerce"],
-      metrics: "410+ GoDaddy Sites | 450+ Total Builds | PageSpeed 95+",
+      metrics: "450+ Total Builds | 410+ GoDaddy Sites | PageSpeed 95+",
       liveUrl: "https://woodward.consulting/",
       featured: true,
       clientUrls: [

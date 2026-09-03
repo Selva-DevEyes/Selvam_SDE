@@ -28,7 +28,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
             Featured <span className="text-[var(--accent-green)]">Works & Projects</span>
           </h2>
           <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-            Explore 410+ enterprise WordPress client sites & full-stack web applications.
+            Explore 450+ enterprise WordPress client sites & full-stack web applications.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                 : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
             }`}
           >
-            WordPress (410+)
+            WordPress (450+)
           </button>
           <button
             onClick={() => setFilter('python-ai')}
@@ -92,7 +92,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                         : 'bg-[var(--accent-cyan-bg)] text-[var(--accent-cyan)] border-[var(--accent-cyan)]/30'
                     }`}
                   >
-                    {isWordpress ? 'WordPress Enterprise (410+ Sites)' : 'Python & Full-Stack'}
+                    {isWordpress ? 'WordPress Enterprise (450+ Builds)' : 'Python & Full-Stack'}
                   </span>
 
                   {proj.featured && (
@@ -102,7 +102,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
                   )}
                 </div>
 
-                {/* Project Title with Clean Line Break Handling */}
+                {/* Project Title */}
                 <h3 className="text-base sm:text-lg font-bold text-[var(--text-main)] group-hover:text-[var(--accent-green)] transition-colors break-words leading-snug">
                   {proj.title}
                 </h3>
