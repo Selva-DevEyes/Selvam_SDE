@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
-import { Code2, Globe, Sparkles, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
+import { Code2, Globe, Sparkles, CheckCircle2, Zap } from 'lucide-react';
 
 interface AboutSectionProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
@@ -119,20 +119,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentRole }) => {
         </div>
       </div>
 
-      {/* Milestone Counter Ticker */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-[var(--border-color)]">
+      {/* Milestone Counter Ticker (2 columns per row, 2 rows total = 2x2 grid) */}
+      <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--border-color)]">
         {PORTFOLIO_DATA.stats.map((st, idx) => (
           <div
             key={idx}
-            className="p-4 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] text-center space-y-1 hover:border-[var(--accent-green)]/40 transition-colors shadow-md"
+            className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] text-center space-y-1 hover:border-[var(--accent-green)]/40 transition-colors shadow-md"
           >
             <div className="text-2xl sm:text-3xl font-extrabold text-[var(--accent-green)] font-mono">
               {st.value}
             </div>
-            <div className="text-xs font-bold text-[var(--text-main)]">
+            <div className="text-xs sm:text-sm font-bold text-[var(--text-main)]">
               {st.label}
             </div>
-            <div className="text-[10px] text-[var(--text-muted)] font-mono">
+            <div className="text-[10px] sm:text-xs text-[var(--text-muted)] font-mono">
               {st.description}
             </div>
           </div>
