@@ -88,8 +88,19 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                 <label className="text-xs font-mono text-[var(--text-muted)] block mb-1.5">
                   Phone / WhatsApp
                 </label>
-                <div className="text-xs font-bold text-[var(--text-main)]">
-                  {PORTFOLIO_DATA.personal.phonePrimary} / {PORTFOLIO_DATA.personal.phoneSecondary}
+                <div className="text-xs font-bold text-[var(--text-main)] space-y-1">
+                  <a
+                    href={`tel:${PORTFOLIO_DATA.personal.phonePrimary.replace(/\s+/g, '')}`}
+                    className="block hover:text-[var(--accent-green)] transition-colors"
+                  >
+                    {PORTFOLIO_DATA.personal.phonePrimary}
+                  </a>
+                  <a
+                    href={`tel:${PORTFOLIO_DATA.personal.phoneSecondary.replace(/\s+/g, '')}`}
+                    className="block hover:text-[var(--accent-green)] transition-colors"
+                  >
+                    {PORTFOLIO_DATA.personal.phoneSecondary}
+                  </a>
                 </div>
               </div>
             </div>
@@ -138,7 +149,7 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
 
         </div>
 
-        {/* Right Column: Contact Form with Increased Label-to-Field Spacing */}
+        {/* Right Column: Contact Form */}
         <div className="lg:col-span-3 p-6 sm:p-8 rounded-3xl bg-[var(--bg-body)] border border-[var(--border-color)] space-y-6 shadow-2xl">
           
           <div className="space-y-1">
