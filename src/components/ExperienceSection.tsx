@@ -53,7 +53,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
         <div className="grid sm:grid-cols-3 gap-3 text-xs text-[var(--text-muted)] pt-2 border-t border-[var(--border-color)]">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
-            <span><strong>450+</strong> Total Shipped Projects</span>
+            <span><strong>450+ Total Shipped Projects</strong></span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
