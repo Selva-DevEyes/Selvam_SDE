@@ -24,7 +24,8 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   const titles = [
     "WordPress Developer [6+ Yrs]",
     "Full-Stack Web Architect",
-    "GoDaddy 410+ Sites Shipped",
+    "450+ Web Projects Shipped",
+    "GoDaddy 410+ Sites Delivered",
     "Python Developer & Data Analyst"
   ];
   const [titleIdx, setTitleIdx] = useState(0);
@@ -37,7 +38,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
   }, []);
 
   return (
-    <div className="w-full lg:w-[340px] shrink-0 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-colors duration-300 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-48px)] lg:overflow-y-auto z-30">
+    <div className="w-full lg:w-[340px] shrink-0 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-colors duration-300 lg:sticky lg:top-6 lg:self-start z-30">
       
       {/* Top Profile Header */}
       <div className="flex flex-col items-center text-center space-y-4">
@@ -136,8 +137,12 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
           <span className="font-semibold text-[var(--text-main)]">Tirunelveli, TN</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-[var(--text-muted)] font-mono">WP DEPLOYMENTS:</span>
-          <span className="font-semibold text-[var(--accent-green)] font-bold">410+ Sites</span>
+          <span className="text-[var(--text-muted)] font-mono">TOTAL BUILDS:</span>
+          <span className="font-semibold text-[var(--accent-green)] font-bold">450+ Projects</span>
+        </div>
+        <div className="flex justify-between items-center">
+          <span className="text-[var(--text-muted)] font-mono">GODADDY SITES:</span>
+          <span className="font-semibold text-[var(--accent-cyan)] font-bold">410+ Shipped</span>
         </div>
       </div>
 

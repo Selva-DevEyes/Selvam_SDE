@@ -21,7 +21,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
             Resume & <span className="text-[var(--accent-green)]">Curriculum Vitae</span>
           </h2>
           <p className="text-xs sm:text-sm text-[var(--text-muted)]">
-            Professional work history, 410+ client deployments, education, and official PDF resume.
+            Professional work history, 450+ total web projects (410+ GoDaddy), education, and official PDF resume.
           </p>
         </div>
 
@@ -43,25 +43,25 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = () => {
         <div className="flex items-center gap-2">
           <Code2 className="w-5 h-5 text-[var(--accent-green)]" />
           <h3 className="text-base font-bold text-[var(--text-main)]">
-            WordPress Developer [6 Years] | Full-Stack & Gen AI Specialist
+            WordPress Developer [6+ Years] | Full-Stack & Gen AI Specialist
           </h3>
         </div>
         <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed text-justify">
-          WordPress Developer and Full Stack specialist with 6+ years of experience engineering 410 high-performance websites for international clients across the US, UK, Australia, and Canada. Former WordPress Integrator at vSplash Techlab (GoDaddy), consistently shipping 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion.
+          WordPress Developer and Full Stack Specialist with 6+ years of experience engineering 450+ high-performance WordPress, HTML, and backend projects for international clients across the US, UK, Australia, and Canada — including 410+ production websites delivered for GoDaddy's portfolio at vSplash Techlab, and 40+ custom projects delivered across prior engineering roles. Consistently shipped 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion.
         </p>
 
         <div className="grid sm:grid-cols-3 gap-3 text-xs text-[var(--text-muted)] pt-2 border-t border-[var(--border-color)]">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
-            <span><strong>428+</strong> Total Shipped Projects</span>
+            <span><strong>450+</strong> Total Shipped Projects</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
+            <span><strong>410+</strong> GoDaddy Portfolio Sites</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
             <span><strong>70 → 95+</strong> PageSpeed Improvement</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0" />
-            <span><strong>8–10 Pages</strong> Daily Throughput</span>
           </div>
         </div>
       </div>

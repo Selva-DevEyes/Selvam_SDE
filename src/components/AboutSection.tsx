@@ -2,129 +2,141 @@
 
 import React from 'react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
-import { Terminal, Cpu, Layout, Code2, Zap, Award, GraduationCap } from 'lucide-react';
+import { Code2, Globe, Sparkles, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
 
 interface AboutSectionProps {
   currentRole: 'python-ai' | 'wordpress-fullstack';
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ currentRole }) => {
-  const activeRoleData = PORTFOLIO_DATA.roles[currentRole];
+  const roleData = PORTFOLIO_DATA.roles[currentRole];
+  const isWordpress = currentRole === 'wordpress-fullstack';
 
-  const services = [
-    {
-      icon: <Code2 className="w-6 h-6 text-[var(--accent-green)]" />,
-      title: "Python & FastAPI Backend",
-      desc: "Architecting high-performance asynchronous REST APIs with Pydantic schema validation, SQLAlchemy ORM, and database optimization (PostgreSQL/SQLite)."
-    },
-    {
-      icon: <Cpu className="w-6 h-6 text-[var(--accent-cyan)]" />,
-      title: "Gen AI & Applied LLMs",
-      desc: "Building LLM-integrated microservices, prompt engineering pipelines, and smart automation tools co-developed through Masai & IIT Patna."
-    },
-    {
-      icon: <Layout className="w-6 h-6 text-[var(--accent-green)]" />,
-      title: "WordPress & WooCommerce",
-      desc: "6+ years engineering 410+ production websites for GoDaddy international client portfolio. Rebuilding checkout workflows, ACF dynamic templates, and custom theme logic."
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-[var(--accent-cyan)]" />,
-      title: "PageSpeed & Core Web Vitals",
-      desc: "Optimizing server-side caching, lazy loading, image compression, and CDN setup to boost Google PageSpeed scores from ~70 to 95+."
-    }
-  ];
+  const services = isWordpress
+    ? [
+        {
+          title: "Enterprise WordPress Theme & Plugin Dev",
+          desc: "Architecting custom PHP themes, ACF dynamic templates, and bespoke plugin integrations for international client brands.",
+          icon: <Globe className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "WooCommerce Store Overhauls",
+          desc: "Rebuilding product, cart, checkout flows, payment gateways, and custom AJAX filters to maximize conversion rates.",
+          icon: <Code2 className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "Google PageSpeed & Core Web Vitals (70→95+)",
+          desc: "Server-side caching, image lazy loading, script deferral, CDN tuning, and zero-defect performance optimization.",
+          icon: <Zap className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "Figma to WordPress 1:1 Pixel-Perfect Code",
+          desc: "Converting Figma/Adobe designs into responsive, pixel-perfect Beaver Builder, Elementor & Oxygen templates.",
+          icon: <Sparkles className="w-5 h-5 text-[var(--accent-green)]" />
+        }
+      ]
+    : [
+        {
+          title: "FastAPI & Python REST API Engineering",
+          desc: "Building high-throughput, async microservices with Pydantic schemas, JWT auth, and rate-limited API endpoints.",
+          icon: <Zap className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "SQL & Data Processing Workflows",
+          desc: "Writing complex analytical SQL queries, data cleaning pipelines with Pandas, and schema migrations with SQLAlchemy.",
+          icon: <Code2 className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "Exploratory Data Analysis (EDA) & Insights",
+          desc: "Cleaning raw datasets, detecting patterns, and building data visualizations for structured business intelligence.",
+          icon: <Sparkles className="w-5 h-5 text-[var(--accent-green)]" />
+        },
+        {
+          title: "Gen AI & LLM Application Integration",
+          desc: "Developing prompt-driven feature workflows, RAG integrations, and LLM-powered backend automation.",
+          icon: <Globe className="w-5 h-5 text-[var(--accent-green)]" />
+        }
+      ];
 
   return (
-    <div className="space-y-12 animate-in fade-in duration-300">
+    <div className="space-y-10 sm:space-y-12 animate-in fade-in duration-300">
       
-      {/* Title */}
-      <div>
+      {/* Bio Header */}
+      <div className="space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent-green-bg)] text-[var(--accent-green)] text-xs font-mono font-semibold border border-[var(--accent-green)]/30">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>{roleData.badge}</span>
+        </div>
+
         <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] tracking-tight title-line">
           About <span className="text-[var(--accent-green)]">Me</span>
         </h2>
-        
-        {/* Active Role Tagline */}
-        <div className="p-4 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] flex items-center gap-3 text-xs sm:text-sm font-mono text-[var(--accent-green)] mb-6 transition-colors">
-          <Terminal className="w-5 h-5 shrink-0" />
-          <span>{activeRoleData.tagline}</span>
-        </div>
 
-        {/* Narrative Paragraph */}
-        <div className="space-y-4 text-[var(--text-muted)] text-sm sm:text-base leading-relaxed">
-          <p>
-            I'm <strong className="text-[var(--text-main)]">SELVAM S</strong>, a software and web engineer with <strong className="text-[var(--accent-green)] font-semibold">6+ years of experience</strong> delivering production-ready applications. Formerly a lead WordPress Integrator at <strong className="text-[var(--text-main)]">vSplash Techlab</strong> (GoDaddy projects), I engineered over <strong className="text-[var(--accent-green)] font-semibold">410+ production websites</strong> for international accounts across US, UK, AU, and CA.
-          </p>
-          <p>
-            Currently, I am expanding into backend AI systems through an intensive <strong className="text-[var(--accent-cyan)] font-semibold">Software Development Engineering with Applied AI</strong> program with <strong className="text-[var(--text-main)]">Masai & IIT Patna</strong>, specializing in Python 3, FastAPI, Pydantic, SQLAlchemy, and GenAI LLM integrations.
-          </p>
-        </div>
+        <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed text-justify bg-[var(--bg-body)] p-5 sm:p-6 rounded-2xl border border-[var(--border-color)] shadow-inner">
+          {roleData.summary}
+        </p>
       </div>
 
-      {/* Services Section ("What I Do") */}
-      <div>
-        <h3 className="text-xl font-bold text-[var(--text-main)] mb-6 title-line">
-          My <span className="text-[var(--accent-green)]">Services</span>
-        </h3>
+      {/* Key Highlights / Hero Points */}
+      <div className="grid sm:grid-cols-2 gap-3.5">
+        {roleData.heroPoints.map((point, idx) => (
+          <div
+            key={idx}
+            className="p-3.5 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] flex items-start gap-2.5 hover:border-[var(--accent-green)]/40 transition-colors shadow-sm"
+          >
+            <CheckCircle2 className="w-4 h-4 text-[var(--accent-green)] shrink-0 mt-0.5" />
+            <span className="text-xs text-[var(--text-main)] font-medium leading-normal">{point}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Services / What I Do Grid */}
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h3 className="text-lg sm:text-xl font-bold text-[var(--text-main)]">
+            What <span className="text-[var(--accent-green)]">I Do</span>
+          </h3>
+          <span className="text-xs font-mono text-[var(--text-muted)]">Core Expertise</span>
+        </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
-          {services.map((service, idx) => (
+          {services.map((srv, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl ryancv-box space-y-3"
+              className="p-5 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] hover:border-[var(--accent-green)]/40 transition-all space-y-2 group shadow-lg"
             >
-              <div className="w-12 h-12 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] flex items-center justify-center">
-                {service.icon}
+              <div className="p-2.5 rounded-xl bg-[var(--bg-card)] w-fit border border-[var(--border-color)] group-hover:scale-110 transition-transform">
+                {srv.icon}
               </div>
-              <h4 className="text-base font-bold text-[var(--text-main)]">
-                {service.title}
+              <h4 className="text-sm font-bold text-[var(--text-main)] group-hover:text-[var(--accent-green)] transition-colors">
+                {srv.title}
               </h4>
               <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                {service.desc}
+                {srv.desc}
               </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Fun Facts / Counter Metrics Ticker */}
-      <div>
-        <h3 className="text-xl font-bold text-[var(--text-main)] mb-6 title-line">
-          Engineering <span className="text-[var(--accent-green)]">Milestones</span>
-        </h3>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {PORTFOLIO_DATA.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] text-center space-y-1 hover:border-[var(--accent-green)]/40 transition-colors"
-            >
-              <div className="text-3xl font-extrabold font-mono text-[var(--accent-green)]">
-                {stat.value}
-              </div>
-              <div className="text-xs font-semibold text-[var(--text-main)]">
-                {stat.label}
-              </div>
-              <div className="text-[10px] text-[var(--text-muted)] line-clamp-1">
-                {stat.description}
-              </div>
+      {/* Milestone Counter Ticker */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-[var(--border-color)]">
+        {PORTFOLIO_DATA.stats.map((st, idx) => (
+          <div
+            key={idx}
+            className="p-4 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] text-center space-y-1 hover:border-[var(--accent-green)]/40 transition-colors shadow-md"
+          >
+            <div className="text-2xl sm:text-3xl font-extrabold text-[var(--accent-green)] font-mono">
+              {st.value}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Credentials Quick Banner */}
-      <div className="p-5 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <GraduationCap className="w-8 h-8 text-[var(--accent-green)] shrink-0" />
-          <div>
-            <div className="text-xs font-mono text-[var(--text-muted)]">QUALIFICATION</div>
-            <div className="text-sm font-bold text-[var(--text-main)]">B.E. Electrical & Electronics — PSN Institute</div>
+            <div className="text-xs font-bold text-[var(--text-main)]">
+              {st.label}
+            </div>
+            <div className="text-[10px] text-[var(--text-muted)] font-mono">
+              {st.description}
+            </div>
           </div>
-        </div>
-        <div className="flex items-center gap-2 text-xs font-mono text-[var(--accent-cyan)] bg-[var(--accent-cyan)]/10 px-3 py-1.5 rounded-xl border border-[var(--accent-cyan)]/20">
-          <Award className="w-4 h-4" />
-          <span>IBM Certified Full-Stack JS</span>
-        </div>
+        ))}
       </div>
 
     </div>

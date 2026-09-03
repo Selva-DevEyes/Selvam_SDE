@@ -46,21 +46,21 @@ export const PORTFOLIO_DATA = {
       title: "Python Developer & Data Analyst",
       badge: "Python, FastAPI & Data Analytics Specialist",
       tagline: "Developing REST APIs, Data Processing Workflows & Extracting Insights from Structured Datasets",
-      summary: "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 410+ production websites. Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills.",
+      summary: "Python Developer & Data Analyst with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis through the Masai School & IIT Patna SDE program. Experienced in developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python. Skilled in SQL, data cleaning, exploratory data analysis, data visualization, and extracting insights from structured datasets. Brings 6+ years of professional web development experience with PHP, MySQL, JavaScript, and 450+ total production web projects (410+ for GoDaddy portfolio). Currently seeking opportunities as a Python Developer, Backend Developer, or Data Analyst to apply strong programming, database, and analytical skills.",
       heroPoints: [
         "1 Year Hands-on Experience in Python, SQL, FastAPI & Pandas",
         "REST APIs, Database Applications, CRUD & Data Workflows",
         "SQL, Data Cleaning, Exploratory Data Analysis & Visualization",
-        "6+ Years Web Engineering Foundation with 410+ Production Sites"
+        "6+ Years Web Engineering Foundation with 450+ Shipped Builds"
       ]
     },
     'wordpress-fullstack': {
       title: "WordPress Developer & Full-Stack Engineer",
       badge: "6+ Years Enterprise CMS & Web Engineering",
-      tagline: "Building High-Performance Websites, Custom Themes & WooCommerce Architecture Shipped for 410+ International Clients",
-      summary: "WordPress Integrator and Full Stack Specialist with 6+ years of experience engineering 410+ high-performance websites for GoDaddy's international client portfolio across the US, UK, Australia, and Canada. Expert in custom theme development, ACF, WooCommerce architecture, server performance (70→95+ PageSpeed), and responsive Vue/React front-ends.",
+      tagline: "Building High-Performance Websites, Custom Themes & WooCommerce Architecture Shipped for 450+ International Clients",
+      summary: "WordPress Developer and Full Stack Specialist with 6+ years of experience engineering 450+ high-performance WordPress, HTML, and backend projects for international clients across the US, UK, Australia, and Canada — including 410+ production websites delivered for GoDaddy's portfolio at vSplash Techlab, and 40+ custom projects delivered across prior engineering roles. Consistently shipped 8–10 pixel-perfect pages daily while boosting Google PageSpeed scores from 70 → 95+. Deep expertise in theme development, WooCommerce, ACF, Beaver Builder, Elementor, performance optimization, and Figma-to-WordPress conversion.",
       heroPoints: [
-        "410+ Production Websites Delivered for GoDaddy Portfolio",
+        "450+ WordPress & HTML Projects Shipped (410+ GoDaddy + 40+ Client Builds)",
         "Google PageSpeed Optimization Boost (70 → 95+ Average)",
         "Custom WP Themes, WooCommerce & ACF Dynamic Templates",
         "Sustained 8–10 Pixel-Perfect Pages Daily Throughput"
@@ -70,8 +70,8 @@ export const PORTFOLIO_DATA = {
 
   stats: [
     { value: "6+", label: "Years Web Experience", description: "PHP, MySQL, JavaScript, Custom CMS" },
+    { value: "450+", label: "WordPress & HTML Projects", description: "410+ GoDaddy + 40+ Client Builds" },
     { value: "1 Year", label: "Python & Data Analysis", description: "Masai & IIT Patna SDE Program" },
-    { value: "410+", label: "Production Websites", description: "Delivered for GoDaddy International Portfolio" },
     { value: "95+", label: "PageSpeed Score", description: "Boosted from ~70 via Core Web Vitals" }
   ],
 
@@ -123,19 +123,6 @@ export const PORTFOLIO_DATA = {
 
   experiences: [
     {
-      id: "exp-masai",
-      company: "Masai School & IIT Patna SDE Program",
-      role: "Python Developer & Data Analyst Trainee",
-      period: "Feb 2026 – Ongoing",
-      location: "Remote / Intensive Track",
-      category: "python-ai",
-      highlights: [
-        "Completing an intensive program with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis.",
-        "Developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python.",
-        "Performing SQL queries, data cleaning, exploratory data analysis (EDA), and data visualization to extract insights from structured datasets."
-      ]
-    },
-    {
       id: "exp-vsplash",
       company: "vSplash Techlab [GoDaddy Projects]",
       role: "WordPress Integrator 2",
@@ -158,7 +145,7 @@ export const PORTFOLIO_DATA = {
       location: "India",
       category: "fullstack",
       highlights: [
-        "Built responsive, cross-browser HTML/CSS websites using Bootstrap and Tailwind CSS, ensuring consistent rendering across browsers and devices.",
+        "Built responsive, cross-browser HTML/CSS websites using Bootstrap and Tailwind CSS, delivering 25+ custom client builds.",
         "Engineered interactive Vue.js components with JavaScript-based logic, standardizing UI patterns and reducing front-end rework cycles.",
         "Customized backend WordPress theme functions and plugin logic using PHP and MySQL, extending site functionality beyond standard builder capabilities."
       ]
@@ -171,8 +158,21 @@ export const PORTFOLIO_DATA = {
       location: "India",
       category: "wordpress",
       highlights: [
-        "Designed and launched client WordPress websites end-to-end using Oxygen Builder, owning the full cycle from design brief to live deployment.",
+        "Designed and launched 15+ client WordPress websites end-to-end using Oxygen Builder, owning the full cycle from design brief to live deployment.",
         "Optimized websites for Core Web Vitals, mobile responsiveness, and on-page SEO, improving organic visibility and performance scores for all clients."
+      ]
+    },
+    {
+      id: "exp-masai",
+      company: "Masai School & IIT Patna SDE Program",
+      role: "Python Developer & Data Analyst Trainee",
+      period: "Feb 2026 – Ongoing",
+      location: "Remote / Intensive Track",
+      category: "python-ai",
+      highlights: [
+        "Completing an intensive program with 1 year of hands-on experience in Python, SQL, FastAPI, Pandas, and data analysis.",
+        "Developing REST APIs, database-driven applications, CRUD operations, and data processing workflows using Python.",
+        "Performing SQL queries, data cleaning, exploratory data analysis (EDA), and data visualization to extract insights from structured datasets."
       ]
     },
     {
@@ -191,25 +191,13 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "proj-wowcodes-lms",
-      title: "WoWCodes LMS & SDE Evaluation Engine",
-      category: "python-ai",
-      description: "Modern full-stack web application designed for software developers to master technical skills and take employer-grade assessments.",
-      longDescription: "Features 14 learning paths, randomized quiz engine with Fisher-Yates option shuffling, study velocity analytics, JWT authentication, and cloud PostgreSQL integration.",
-      tags: ["React 19", "Redux Toolkit", "FastAPI", "SQLAlchemy", "Pydantic v2", "PostgreSQL", "Tailwind CSS", "Vite"],
-      metrics: "14 Learning Paths | Fisher-Yates Quiz Engine | Velocity Analytics",
-      liveUrl: "https://wowcodes-frontend.onrender.com/",
-      githubUrl: "https://github.com/Selva-DevEyes/WoWCodes_LMS",
-      featured: true
-    },
-    {
       id: "proj-godaddy-corporate-wordpress",
       title: "Enterprise WordPress Web Production (GoDaddy Portfolio)",
       category: "wordpress",
       description: "End-to-end WordPress web development delivering 410+ production client websites across GoDaddy's US, UK, AU & CA client portfolio.",
       longDescription: "Handled complete end-to-end WordPress production: building from client requirement briefs, design files & copy docs, custom PHP backend settings, dynamic templates, WooCommerce setups, SEO tags, caching mechanisms, CRM webhooks, and manual QA across all screen sizes.",
       tags: ["WordPress", "PHP", "MySQL", "Beaver Builder", "Elementor", "JavaScript", "CSS3", "WooCommerce"],
-      metrics: "410+ Production Sites | PageSpeed 95+ | 8–10 Pages Shipped / Day",
+      metrics: "410+ GoDaddy Sites | 450+ Total Builds | PageSpeed 95+",
       liveUrl: "https://woodward.consulting/",
       featured: true,
       clientUrls: [
@@ -237,14 +225,15 @@ export const PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "proj-fastapi-ai",
-      title: "FastAPI REST Service & Data Analysis Engine",
+      id: "proj-wowcodes-lms",
+      title: "WoWCodes LMS & SDE Evaluation Engine",
       category: "python-ai",
-      description: "Asynchronous REST API service built with Python, FastAPI, SQL, Pydantic, and Pandas for structured data processing and CRUD workflows.",
-      longDescription: "Full-stack Python backend & data processing suite featuring Pydantic schemas, SQL query execution, Pandas data cleaning, and exploratory data visualization pipelines.",
-      tags: ["Python", "FastAPI", "SQL", "Pandas", "Data Analysis", "PostgreSQL"],
-      metrics: "Sub-50ms API Latency | Automated Data Processing",
-      githubUrl: "https://github.com/Selva-DevEyes",
+      description: "Modern full-stack web application designed for software developers to master technical skills and take employer-grade assessments.",
+      longDescription: "Features 14 learning paths, randomized quiz engine with Fisher-Yates option shuffling, study velocity analytics, JWT authentication, and cloud PostgreSQL integration.",
+      tags: ["React 19", "Redux Toolkit", "FastAPI", "SQLAlchemy", "Pydantic v2", "PostgreSQL", "Tailwind CSS", "Vite"],
+      metrics: "14 Learning Paths | Fisher-Yates Quiz Engine | Velocity Analytics",
+      liveUrl: "https://wowcodes-frontend.onrender.com/",
+      githubUrl: "https://github.com/Selva-DevEyes/WoWCodes_LMS",
       featured: true
     },
     {
@@ -255,6 +244,17 @@ export const PORTFOLIO_DATA = {
       longDescription: "Rebuilt standard WooCommerce single-product layout and multi-step checkout workflow with AJAX cart updating, custom hooks in PHP, and high-converting mobile UI.",
       tags: ["WooCommerce", "PHP", "JavaScript", "ACF Pro", "REST API"],
       metrics: "Increased Conversion & Zero-Defect Delivery",
+      featured: true
+    },
+    {
+      id: "proj-fastapi-ai",
+      title: "FastAPI REST Service & Data Analysis Engine",
+      category: "python-ai",
+      description: "Asynchronous REST API service built with Python, FastAPI, SQL, Pydantic, and Pandas for structured data processing and CRUD workflows.",
+      longDescription: "Full-stack Python backend & data processing suite featuring Pydantic schemas, SQL query execution, Pandas data cleaning, and exploratory data visualization pipelines.",
+      tags: ["Python", "FastAPI", "SQL", "Pandas", "Data Analysis", "PostgreSQL"],
+      metrics: "Sub-50ms API Latency | Automated Data Processing",
+      githubUrl: "https://github.com/Selva-DevEyes",
       featured: true
     },
     {

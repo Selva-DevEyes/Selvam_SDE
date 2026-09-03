@@ -103,7 +103,7 @@ export default function WordPressResumePage() {
             </div>
             <div className="italic text-slate-700 text-xs font-semibold">Front-End Developer</div>
             <ul className="list-disc pl-5 text-slate-700 space-y-1">
-              <li>Built fully responsive, cross-browser HTML websites using Bootstrap and Tailwind CSS.</li>
+              <li>Built fully responsive, cross-browser HTML websites using Bootstrap and Tailwind CSS, shipping 25+ custom client builds.</li>
               <li>Engineered interactive Vue.js components and customized WordPress theme functions using PHP and MySQL.</li>
             </ul>
           </div>
@@ -115,7 +115,7 @@ export default function WordPressResumePage() {
             </div>
             <div className="italic text-slate-700 text-xs font-semibold">Web Designer</div>
             <ul className="list-disc pl-5 text-slate-700 space-y-1">
-              <li>Designed and launched client WordPress websites end-to-end using Oxygen Builder.</li>
+              <li>Designed and launched 15+ client WordPress websites end-to-end using Oxygen Builder.</li>
               <li>Optimized websites for Core Web Vitals, mobile responsiveness, and on-page SEO.</li>
             </ul>
           </div>
