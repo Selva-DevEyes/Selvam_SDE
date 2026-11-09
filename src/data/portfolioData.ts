@@ -27,12 +27,23 @@ export interface SkillCategory {
   skills: { name: string; level: number; tag?: string }[];
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  period: string;
+  skills: string;
+  kind: 'Course completion' | 'Recognition' | 'Ongoing training' | 'Digital badge';
+  image?: string;
+  documentUrl?: string;
+  credentialUrl?: string;
+}
+
 export const PORTFOLIO_DATA = {
   personal: {
     name: "SELVAM S",
     handle: "CodeBySelvam",
     location: "Tirunelveli, Tamil Nadu, India",
-    email: "selvamsde33@gmail.com",
+    email: "selvamshunmugam28@gmail.com",
     phonePrimary: "+91 8248552197",
     phoneSecondary: "+91 9489228575",
     portfolioUrl: "https://selvam-sde.onrender.com/",
@@ -290,16 +301,57 @@ export const PORTFOLIO_DATA = {
 
   certifications: [
     {
+      title: "Git and GitHub Essentials",
+      issuer: "Credential hosted on Credly",
+      period: "See credential for issue details",
+      skills: "Git, GitHub, version control",
+      kind: "Digital badge",
+      credentialUrl: "https://www.credly.com/badges/69f4cb69-e034-4f56-8b76-15c55bed3f81/linked_in_profile"
+    },
+    {
       title: "Software Development Engineering with Applied AI",
       issuer: "Masai School & IIT Patna",
       period: "Feb 2026 – Ongoing",
-      skills: "Python, SQL, FastAPI, Pandas, Data Analysis, REST APIs"
+      skills: "Python, SQL, FastAPI, Pandas, Data Analysis, REST APIs",
+      kind: "Ongoing training"
     },
     {
-      title: "Full Stack JavaScript Developer Certification",
-      issuer: "IBM",
-      period: "Oct 2025 – Nov 2025",
-      skills: "Full-Stack JS, React, Node, Web APIs"
+      title: "JavaScript Programming Essentials",
+      issuer: "IBM · Coursera",
+      period: "7 January 2026",
+      skills: "JavaScript programming fundamentals",
+      kind: "Course completion",
+      image: "/certificates/ibm-javascript-preview.png",
+      documentUrl: "/certificates/ibm-javascript-essentials.pdf",
+      credentialUrl: "https://coursera.org/verify/464LK5W1FO2B"
+    },
+    {
+      title: "Certificate of Consistent Excellence",
+      issuer: "Vishlesan i-Hub, IIT Patna · Masai",
+      period: "03/10/2026",
+      skills: "Recognition in Software Development Engineering with Applied AI (Tamil)",
+      kind: "Recognition",
+      image: "/certificates/masai-consistent-excellence.png",
+      documentUrl: "/certificates/masai-consistent-excellence.png"
+    },
+    {
+      title: "Certificate of Total Engagement",
+      issuer: "Vishlesan i-Hub, IIT Patna · Masai",
+      period: "27 June 2026",
+      skills: "Engagement in Software Development Engineering with Applied AI (Tamil)",
+      kind: "Recognition",
+      image: "/certificates/masai-total-engagement.png",
+      documentUrl: "/certificates/masai-total-engagement.png"
+    },
+    {
+      title: "The Complete Front-End Web Development Course",
+      issuer: "Udemy · Joseph Delgadillo & Nick Germaine",
+      period: "24 September 2024 · 17 hours",
+      skills: "Front-end web development",
+      kind: "Course completion",
+      image: "/certificates/udemy-front-end-development.jpg",
+      documentUrl: "/certificates/udemy-front-end-development.jpg",
+      credentialUrl: "https://www.udemy.com/certificate/UC-c9754f31-0f43-40d8-b9e8-ff8b65cb8148/"
     }
-  ]
+  ] as Certification[]
 };

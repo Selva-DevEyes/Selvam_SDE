@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+
+const bodyFont = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const headingFont = Manrope({ subsets: ["latin"], variable: "--font-heading", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Selvam S | Web Developer · WordPress & Python",
@@ -24,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased dark"
+      className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[var(--bg-body)] text-[var(--text-main)] selection:bg-[var(--accent-green)] selection:text-slate-950">
         {children}

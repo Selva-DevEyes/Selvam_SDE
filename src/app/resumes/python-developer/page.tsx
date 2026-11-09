@@ -38,7 +38,7 @@ export default function PythonResumePage() {
             PYTHON DEVELOPER & DATA ANALYST | BACKEND & FULL-STACK
           </div>
           <div className="text-xs text-slate-600 flex flex-wrap justify-center gap-x-4 gap-y-1 pt-1 font-mono">
-            <span>Email: selvamsde33@gmail.com</span>
+            <span>Email: selvamshunmugam28@gmail.com</span>
             <span>Phone: +91 8248552197, +91 9489228575</span>
             <span>Location: Tirunelveli, Tamil Nadu, 627357</span>
           </div>
@@ -127,7 +127,7 @@ export default function PythonResumePage() {
           </h2>
           <div className="space-y-1 text-slate-700">
             <div><strong>Software Development Engineering with Applied AI:</strong> Masai School & IIT Patna (Feb 2026 – Ongoing)</div>
-            <div><strong>Full Stack JavaScript Developer Certification:</strong> IBM (Oct 2025 – Nov 2025)</div>
+            <div><strong>JavaScript Programming Essentials:</strong> IBM / Coursera (7 January 2026)</div>
             <div><strong>Bachelor of Engineering (B.E.) — Electrical & Electronics Engineering:</strong> PSN Institute of Technology & Science (2010 – 2014)</div>
           </div>
         </div>

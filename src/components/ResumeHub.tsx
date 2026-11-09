@@ -48,7 +48,7 @@ export const ResumeHub: React.FC<ResumeHubProps> = () => {
               <span>WORDPRESS DEVELOPER [6 YEARS] | FULL-STACK | GEN AI</span>
             </div>
             <div className="text-xs text-[var(--text-muted)] mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono">
-              <span>📧 selvamsde33@gmail.com</span>
+              <span>📧 selvamshunmugam28@gmail.com</span>
               <span>📞 +91 8248552197, +91 9489228575</span>
               <span>📍 Tirunelveli, Tamil Nadu, 627357</span>
               <span>🌐 selvam-sde.onrender.com</span>
@@ -123,8 +123,8 @@ export const ResumeHub: React.FC<ResumeHubProps> = () => {
             </div>
             <div className="flex items-center justify-between p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div>
-                <div className="font-bold text-[var(--text-main)]">Full Stack JavaScript Developer Certification</div>
-                <div className="text-[var(--text-muted)]">IBM (Oct 2025 – Nov 2025)</div>
+                <div className="font-bold text-[var(--text-main)]">JavaScript Programming Essentials</div>
+                <div className="text-[var(--text-muted)]">IBM / Coursera (7 January 2026)</div>
               </div>
               <span className="text-[10px] font-mono text-[var(--accent-cyan)] bg-[var(--accent-cyan-bg)] px-2 py-0.5 rounded border border-[var(--accent-cyan)]/20">Verified</span>
             </div>
