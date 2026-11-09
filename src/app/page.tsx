@@ -1,260 +1,68 @@
 'use client';
-
-import React, { useState, useEffect } from 'react';
-import { ProfileSidebar } from '@/components/ProfileSidebar';
-import { HeaderNav } from '@/components/HeaderNav';
-import { AboutSection } from '@/components/AboutSection';
-import { ExperienceSection } from '@/components/ExperienceSection';
-import { SkillsSection } from '@/components/SkillsSection';
-import { ProjectsSection } from '@/components/ProjectsSection';
-import { ContactSection } from '@/components/ContactSection';
-import { BackgroundAnimation } from '@/components/BackgroundAnimation';
-import { User, Briefcase, Cpu, FolderGit2, Mail, Menu, X, Sparkles, Code2, Sun, Moon } from 'lucide-react';
-
+import { useState } from 'react';
+import Image from 'next/image';
+import { GithubIcon, LinkedinIcon } from '@/components/Icons';
+import { ArrowUpRight, Mail, MapPin, Menu, X, Code2, Braces, Database, Globe, Check, Copy, FileText } from 'lucide-react';
+import { PORTFOLIO_DATA as data } from '@/data/portfolioData';
+const filters = ['All work', 'Python & APIs', 'WordPress'] as const;
+const titles: Record<string, string> = {
+    'proj-javamaster': 'Java Master. From build to launch.',
+    'proj-godaddy-corporate-wordpress': 'Websites built for the real world.',
+    'proj-wowcodes-lms': 'A better way to learn to code.',
+    'proj-woocommerce-custom': 'Commerce, with less friction.',
+    'proj-fastapi-ai': 'From raw data to useful APIs.',
+    'proj-python-sql-analytics': 'Making messy data make sense.',
+};
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<string>('about');
-  const [currentRole, setCurrentRole] = useState<'python-ai' | 'wordpress-fullstack'>('wordpress-fullstack');
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-
-  // Load theme preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('ryancv_theme') as 'dark' | 'light' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    const [filter, setFilter] = useState<string>('All work');
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
+    const [copyError, setCopyError] = useState(false);
+    const projects = data.projects.filter(p => filter === 'All work' || (filter === 'WordPress' ? p.category === 'wordpress' : p.category === 'python-ai'));
+    async function copyEmail() {
+        try {
+            await navigator.clipboard.writeText(data.personal.email);
+            setCopied(true);
+            setCopyError(false);
+            window.setTimeout(() => setCopied(false), 2500);
+        }
+        catch {
+            setCopyError(true);
+        }
     }
-  }, []);
-
-  const handleThemeToggle = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('ryancv_theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
-
-  const handleRoleToggle = (role: 'python-ai' | 'wordpress-fullstack') => {
-    setCurrentRole(role);
-  };
-
-  const handleNavigate = (tabId: string) => {
-    setActiveTab(tabId === 'resumes' ? 'resume' : tabId);
-    setIsMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const tabs = [
-    { id: 'about', label: 'ABOUT', icon: <User className="w-4 h-4" /> },
-    { id: 'resume', label: 'RESUME & CV', icon: <Briefcase className="w-4 h-4" /> },
-    { id: 'skills', label: 'SKILLS', icon: <Cpu className="w-4 h-4" /> },
-    { id: 'projects', label: 'WORKS', icon: <FolderGit2 className="w-4 h-4" /> },
-    { id: 'contact', label: 'CONTACT', icon: <Mail className="w-4 h-4" /> },
-  ];
-
-  return (
-    <main className="min-h-screen bg-[var(--bg-body)] text-[var(--text-main)] relative overflow-hidden transition-colors duration-300">
-      
-      {/* RyanCV Animated Particles & Constellation Background */}
-      <BackgroundAnimation />
-
-      {/* Main App Container */}
-      <div className="ryancv-wrapper relative z-10">
-        
-        {/* Mobile Top Header Bar with Profile Name & Hamburger Icon */}
-        <div className="lg:hidden mb-4 p-3.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-center justify-between shadow-xl sticky top-3 z-50 transition-colors duration-300">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent-green)] animate-ping" />
-            <div>
-              <span className="text-sm font-mono font-extrabold text-[var(--text-main)] block">
-                SELVAM S.
-              </span>
-              <span className="text-[10px] font-mono text-[var(--accent-green)]">
-                WordPress Specialist [6+ Yrs]
-              </span>
-            </div>
+    return (<div className="portfolio">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header"><div className="shell nav-inner">
+        <a className="wordmark" href="#home" aria-label="Selvam home"><span className="brand-mark">s<span>.</span></span> selvam<span className="muted">/ dev</span></a>
+        <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Main navigation">
+          {['Work', 'About', 'Experience', 'Skills'].map(item => <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{item}</a>)}
+          <a className="nav-contact" href="#contact" onClick={() => setMenuOpen(false)}>Let’s talk <ArrowUpRight size={15}/></a>
+        </nav>
+        <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+      </div></header>
+      <main id="main">
+        <section id="home" className="shell hero-section">
+          <div className="hero-copy"><span className="availability"><i /> Open to opportunities</span>
+            <p className="eyebrow hero-intro">HEY, I’M SELVAM S <span>↗</span></p>
+            <h1>Thoughtful code.<br />Real-world <span className="lime">impact.</span></h1>
+            <p className="hero-description">A web developer who connects great interfaces with the engineering behind them. From production WordPress websites to Python APIs and full-stack applications.</p>
+            <div className="hero-actions"><a className="button primary" href="#work">Explore my work <ArrowUpRight size={19}/></a><a className="text-link" href="/resumes/wordpress-developer">View résumé <FileText size={17}/></a></div>
+            <div className="hero-footnote"><MapPin size={14}/> Tirunelveli, India <span className="tiny-divider"/> Building for the web, everywhere.</div>
           </div>
-
-          <div className="flex items-center gap-2">
-            {/* Quick Theme Toggle Icon on Top Bar */}
-            <button
-              onClick={handleThemeToggle}
-              className="p-2 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--accent-green)] transition-colors"
-              title="Toggle Theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-400" />
-              ) : (
-                <Moon className="w-4 h-4 text-indigo-500" />
-              )}
-            </button>
-
-            {/* Hamburger Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-[var(--accent-green)] text-slate-950 font-bold shadow-md hover:opacity-90 transition-all flex items-center gap-1.5 text-xs font-mono"
-              aria-label="Toggle Mobile Navigation Menu"
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Slide-Over Dropdown Navigation Drawer */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mb-6 p-5 rounded-3xl bg-[var(--bg-card)] border-2 border-[var(--accent-green)]/60 shadow-2xl space-y-5 animate-in fade-in slide-in-from-top-4 duration-200">
-            <div className="text-xs font-mono text-[var(--accent-green)] font-bold uppercase tracking-wider border-b border-[var(--border-color)] pb-2 flex items-center justify-between">
-              <span>Navigation Menu</span>
-              <span className="text-[10px] text-[var(--text-muted)]">Select Section</span>
-            </div>
-
-            {/* Mobile Nav Links List */}
-            <div className="grid grid-cols-1 gap-2">
-              {tabs.map((tab) => {
-                const isActive = activeTab === tab.id || (activeTab === 'resumes' && tab.id === 'resume');
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => handleNavigate(tab.id)}
-                    className={`flex items-center gap-3 p-3 rounded-xl text-xs font-mono font-bold tracking-wider transition-all ${
-                      isActive
-                        ? 'bg-[var(--accent-green)] text-slate-950 shadow-md'
-                        : 'bg-[var(--bg-body)] text-[var(--text-muted)] border border-[var(--border-color)] hover:text-[var(--text-main)]'
-                    }`}
-                  >
-                    <span>{tab.icon}</span>
-                    <span>{tab.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Role Switcher in Mobile Drawer */}
-            <div className="p-3 rounded-2xl bg-[var(--bg-body)] border border-[var(--border-color)] space-y-2">
-              <div className="text-[10px] font-mono text-[var(--text-muted)] text-center uppercase tracking-widest font-bold">
-                Active Perspective
-              </div>
-              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-                <button
-                  onClick={() => handleRoleToggle('wordpress-fullstack')}
-                  className={`py-2 px-2 rounded-xl font-bold flex items-center justify-center gap-1 transition-all ${
-                    currentRole === 'wordpress-fullstack'
-                      ? 'bg-[var(--accent-green)] text-slate-950 shadow-md'
-                      : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
-                  }`}
-                >
-                  <Code2 className="w-3.5 h-3.5" />
-                  <span>WordPress</span>
-                </button>
-                <button
-                  onClick={() => handleRoleToggle('python-ai')}
-                  className={`py-2 px-2 rounded-xl font-bold flex items-center justify-center gap-1 transition-all ${
-                    currentRole === 'python-ai'
-                      ? 'bg-[var(--accent-cyan)] text-white shadow-md'
-                      : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
-                  }`}
-                >
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Python AI</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Theme Toggle inside Mobile Drawer */}
-            <button
-              onClick={handleThemeToggle}
-              className="w-full py-3 rounded-xl bg-[var(--bg-body)] border border-[var(--border-color)] text-[var(--text-main)] text-xs font-mono font-bold flex items-center justify-center gap-2 hover:border-[var(--accent-green)] transition-all"
-            >
-              {theme === 'dark' ? (
-                <>
-                  <Sun className="w-4 h-4 text-amber-400" />
-                  <span>Switch to Light Theme</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="w-4 h-4 text-indigo-500" />
-                  <span>Switch to Dark Theme</span>
-                </>
-              )}
-            </button>
-          </div>
-        )}
-
-        {/* Desktop Split vCard Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
-          
-          {/* Left Sticky Profile Card */}
-          <ProfileSidebar
-            currentRole={currentRole}
-            onRoleToggle={handleRoleToggle}
-            onNavigate={handleNavigate}
-            theme={theme}
-            onThemeToggle={handleThemeToggle}
-          />
-
-          {/* Right Main Content Window */}
-          <div className="flex-1 w-full min-w-0">
-            
-            {/* Desktop Top Floating Header Navigation */}
-            <HeaderNav
-              activeTab={activeTab}
-              onTabChange={setActiveTab}
-              currentRole={currentRole}
-              onRoleToggle={handleRoleToggle}
-              theme={theme}
-              onThemeToggle={handleThemeToggle}
-            />
-
-            {/* Dynamic Content Window Card */}
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-5 sm:p-10 shadow-2xl transition-colors duration-300 min-h-[620px]">
-              {activeTab === 'about' && (
-                <AboutSection currentRole={currentRole} />
-              )}
-              {(activeTab === 'resume' || activeTab === 'resumes') && (
-                <ExperienceSection currentRole={currentRole} />
-              )}
-              {activeTab === 'skills' && (
-                <SkillsSection currentRole={currentRole} />
-              )}
-              {activeTab === 'projects' && (
-                <ProjectsSection currentRole={currentRole} />
-              )}
-              {activeTab === 'contact' && (
-                <ContactSection currentRole={currentRole} />
-              )}
-            </div>
-
-            {/* RyanCV Sleek Footer Bar */}
-            <footer className="mt-6 py-4 px-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--text-muted)] gap-2 shadow-lg font-mono">
-              <div>
-                © {new Date().getFullYear()} <span className="text-[var(--accent-green)] font-bold">SELVAM S.</span> All rights reserved.
-              </div>
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://github.com/Selva-DevEyes/Selvam_SDE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[var(--accent-green)] transition-colors"
-                >
-                  GitHub Repository
-                </a>
-                <span>•</span>
-                <a
-                  href="https://selvam-sde.onrender.com/"
-                  className="hover:text-[var(--accent-green)] transition-colors"
-                >
-                  Live Deployment
-                </a>
-              </div>
-            </footer>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </main>
-  );
+          <div className="portrait-composition"><div className="portrait-frame"><div className="portrait-grid"/><span className="portrait-index">DEVELOPER / CREATIVE THINKER</span><Image src="/profile.jpg" alt="Selvam S, web developer" width={600} height={720} priority className="hero-portrait"/><div className="portrait-caption"><span>SELVAM S</span><span>CODE. CREATE. ITERATE.</span></div></div><div className="floating-label"><span className="code-icon"><Code2 size={23}/></span><div>Built with purpose.<small>From the first pixel to production.</small></div><span className="lime">↗</span></div><span className="portrait-orbit" aria-hidden="true">✳</span></div>
+        </section>
+        <section className="shell stats-strip" aria-label="Career highlights">{[data.stats[0], data.stats[1], data.stats[3]].map(stat => <div key={stat.label}><strong>{stat.value}<span>↗</span></strong><div>{stat.label}<small>{stat.description}</small></div></div>)}<div className="stats-note"><span className="lime">Built. Shipped.<br />Always improving.</span></div></section>
+        <section id="work" className="shell section-block"><div className="section-heading"><div><p className="eyebrow"><span>01 /</span> SELECTED WORK</p><h2>Less talk. More <span className="serif">building.</span></h2></div><a className="text-link" href={data.personal.githubUrl} target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight size={17}/></a></div>
+          <div className="project-filters" role="group" aria-label="Filter projects">{filters.map(f => <button key={f} aria-pressed={filter === f} className={filter === f ? 'selected' : ''} onClick={() => setFilter(f)}>{f}{f === 'All work' && <span>{data.projects.length.toString().padStart(2, '0')}</span>}</button>)}</div>
+          <div className="project-grid" aria-live="polite">{projects.map(project => <article className="project-card" key={project.id}>
+            <div className={`project-art ${project.category === 'wordpress' ? 'art-web' : 'art-code'}`} aria-label="Illustrative project preview"><div className="art-topline"><span>{project.category === 'wordpress' ? 'WEB DESIGN & DEVELOPMENT' : 'APPLICATION DEVELOPMENT'}</span><ArrowUpRight size={21}/></div>{project.category === 'wordpress' ? <div className="browser-mock"><div className="browser-toolbar"><i /><i /><i /><span>{project.id === 'proj-javamaster' ? 'javamaster.com / client website' : project.id.includes('commerce') ? 'commerce / experience' : 'woodward / consulting'}</span></div><div className="web-mock-content"><span>{project.id === 'proj-javamaster' ? 'JAVA MASTER.' : project.id.includes('commerce') ? 'THE EVERYDAY COLLECTION' : 'WOODWARD.'}</span><div>{project.id === 'proj-javamaster' ? 'Crafted for coffee.\nBuilt for business.' : project.id.includes('commerce') ? 'Good things.\nSimply found.' : 'A clear vision.\nA stronger business.'}</div><small>Thoughtfully designed. Built to perform. ↗</small><div className="mock-pill">EXPLORE MORE ↗</div></div></div> : <div className="code-mock"><div className="code-tabs"><span /><span /><span /><small>{project.id.includes('wowcodes') ? 'wowcodes / learning platform' : 'pipeline.py'}</small></div>{project.id.includes('wowcodes') ? <div className="lms-mock"><span>WoW<span className="lime">Codes.</span></span><h3>Your next chapter<br />starts with code.</h3><div className="lms-bars"><i /><i /><i /><i /><i /></div><small>LEARN → PRACTICE → BUILD</small></div> : <pre><span className="code-purple">from</span> fastapi <span className="code-purple">import</span> FastAPI{'\n\n'}app = <span className="lime">FastAPI</span>(){'\n\n'}<span className="code-purple">@app.get</span>(<span className="code-gold">"/insights"</span>){'\n'}<span className="code-purple">async def</span> insights():{'\n'}    <span className="code-purple">return</span> {'{'}<span className="code-gold">"status"</span>: <span className="code-gold">"ready"</span>{'}'}</pre>}</div>}<span className="preview-caption">CONCEPT PREVIEW</span></div>
+            <div className="project-details"><p className="project-category">{project.category === 'wordpress' ? 'WORDPRESS / PRODUCTION' : 'PYTHON / FULL-STACK'}</p><h3>{titles[project.id] || project.title}</h3><p>{project.description}</p><div className="tag-list">{project.tags.slice(0, 5).map(tag => <span key={tag}>{tag}</span>)}</div><div className="project-links">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">Visit project <ArrowUpRight size={16}/></a>}{project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer">Source code <GithubIcon className="w-4 h-4"/></a>}{!project.liveUrl && !project.githubUrl && <span className="muted">Project overview</span>}</div>{project.clientUrls && <details className="client-list"><summary>Explore {project.clientUrls.length} client websites</summary><div>{project.clientUrls.map(client => <a key={client.url} href={client.url} target="_blank" rel="noreferrer">{client.name}<ArrowUpRight size={13}/></a>)}</div></details>}</div>
+          </article>)}</div>
+        </section>
+        <section id="about" className="about-section"><div className="shell about-grid"><div><p className="eyebrow"><span>02 /</span> A LITTLE ABOUT ME</p><h2>A builder’s mindset.<br />A designer’s <span className="serif">eye.</span></h2><div className="about-signature">Selvam S<span>↗</span></div></div><div className="about-copy"><p>I turn ideas into websites people can actually use — clear, responsive, and ready for the real world.</p><p>My foundation is in web development: custom WordPress themes, e-commerce, and front-end interfaces for international clients. At vSplash Techlab, I contributed 410+ websites to GoDaddy’s client portfolio.</p><p>Today, I’m extending that experience into Python, FastAPI, SQL, and data analysis through the Masai School & IIT Patna SDE program. The goal stays the same: understand the problem, build carefully, and make the experience better.</p><a className="text-link" href={data.personal.linkedinUrl} target="_blank" rel="noreferrer">Let’s connect on LinkedIn <ArrowUpRight size={17}/></a></div></div></section>
+        <section id="experience" className="shell section-block"><div className="section-heading"><div><p className="eyebrow"><span>03 /</span> THE JOURNEY</p><h2>Experience that <span className="serif">adds up.</span></h2></div><span className="section-note">A foundation in delivery.<br />An appetite for what’s next.</span></div><div className="experience-list">{[data.experiences[3], ...data.experiences.slice(0, 3), data.experiences[4]].map((exp, i) => <article className="experience-row" key={exp.id}><div className="experience-date"><span className={i === 0 ? 'timeline-dot current' : 'timeline-dot'}/>{exp.period}</div><div><span className="experience-company">{exp.company}</span><h3>{exp.role}</h3><ul>{exp.highlights.slice(0, 2).map(h => <li key={h}>{h}</li>)}</ul></div><span className="experience-number">0{i + 1}</span></article>)}</div></section>
+        <section id="skills" className="shell section-block skills-section"><div className="section-heading"><div><p className="eyebrow"><span>04 /</span> MY TOOLKIT</p><h2>The right tools.<br />The right <span className="serif">outcome.</span></h2></div><p className="section-note">From interface to database,<br />here’s what I build with.</p></div><div className="skill-grid">{[{ title: 'Front-end development', icon: Braces, description: 'Interfaces that feel as good as they function.', skills: data.skills.frontend }, { title: 'Backend & data', icon: Database, description: 'The logic and structure behind the experience.', skills: data.skills.backend }, { title: 'WordPress & commerce', icon: Globe, description: 'Production websites, built around business needs.', skills: data.skills.cms }, { title: 'Workflow & quality', icon: Code2, description: 'Thoughtful delivery, from design to deployment.', skills: data.skills.tools }].map(group => <article className="skill-card" key={group.title}><group.icon size={25}/><h3>{group.title}</h3><p>{group.description}</p><div className="tag-list">{group.skills.map(skill => <span key={skill.name}>{skill.name}</span>)}</div></article>)}</div><div className="education-row"><span className="eyebrow">ALWAYS LEARNING</span>{data.certifications.map(cert => <div key={cert.title}><strong>{cert.title}</strong><span>{cert.issuer} · {cert.period}</span></div>)}</div></section>
+        <section id="contact" className="shell contact-section"><span className="availability"><i /> Let’s build something worthwhile</span><h2>Your next project.<br />Our next <span className="serif lime">conversation.</span></h2><div className="contact-bottom"><div><a className="contact-email" href={`mailto:${data.personal.email}`}>{data.personal.email}<ArrowUpRight /></a><div className="contact-actions"><button onClick={copyEmail}>{copied ? <Check size={14}/> : <Copy size={14}/>} {copied ? 'Email copied' : 'Copy email'}</button><a href={`tel:${data.personal.phonePrimary.replace(/\s/g, '')}`}>{data.personal.phonePrimary}</a></div><span className="copy-status" role="status">{copyError ? 'Please select and copy the email address above.' : copied ? 'Ready to paste into your email app.' : ''}</span></div><div className="social-links"><a href={data.personal.githubUrl} aria-label="GitHub" target="_blank" rel="noreferrer"><GithubIcon /></a><a href={data.personal.linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noreferrer"><LinkedinIcon /></a><a href={`mailto:${data.personal.email}`} aria-label="Email Selvam"><Mail /></a></div></div></section>
+      </main><footer className="shell site-footer"><a className="wordmark" href="#home">selvam<span className="lime">.</span></a><span>© {new Date().getFullYear()} Selvam S · Crafted with care & code.</span><a href="#home">Back to top ↑</a></footer>
+    </div>);
 }

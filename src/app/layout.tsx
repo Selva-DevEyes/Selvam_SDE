@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Selvam S | Python Developer & Data Analyst",
-  description: "Official portfolio of Selvam S. Python Developer & Data Analyst with 1 year hands-on experience in Python, SQL, FastAPI, Pandas & 6+ years web engineering foundation.",
+  title: "Selvam S | Web Developer · WordPress & Python",
+  description: "Selvam S builds production websites and full-stack applications. Explore 6+ years of web development, WordPress client work, Python APIs, and end-to-end delivery including Java Master.",
   keywords: ["Selvam S", "CodeBySelvam", "Python Developer", "Data Analyst", "FastAPI", "Pandas", "WordPress Developer", "Full Stack Developer", "Tirunelveli"],
   authors: [{ name: "Selvam S" }],
   openGraph: {
-    title: "Selvam S | Python Developer & Data Analyst",
-    description: "Python Developer & Data Analyst with 1 year hands-on experience in Python, SQL, FastAPI, Pandas, and 6+ years of web engineering experience.",
+    title: "Selvam S | Web Developer · WordPress & Python",
+    description: "Production websites, Python APIs, and thoughtful user experiences. Explore selected work and 6+ years of web development.",
     url: "https://selvam-sde.onrender.com/",
     siteName: "Selvam S Portfolio",
     locale: "en_US",

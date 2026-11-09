@@ -191,6 +191,16 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
+      id: "proj-javamaster",
+      title: "Java Master — End-to-End Website Delivery",
+      category: "wordpress",
+      description: "Delivered the Java Master commercial coffee-roaster website end to end, from website development through launch, including hosting setup and domain configuration.",
+      longDescription: "Owned the end-to-end website delivery, hosting setup, and domain configuration for javamaster.com, taking the client website from development to a live public presence.",
+      tags: ["Website Development", "Hosting Setup", "Domain Configuration", "Production Launch"],
+      liveUrl: "https://javamaster.com/",
+      featured: true
+    },
+    {
       id: "proj-godaddy-corporate-wordpress",
       title: "Enterprise WordPress Web Production (450+ Total Builds / 410+ GoDaddy)",
       category: "wordpress",
